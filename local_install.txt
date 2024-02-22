@@ -1,0 +1,10 @@
+1. export ARGOS_INSTALL_PATH=$HOME/your_name if you want to install argos3 into $HOME/your_name/argos3-dist, otherwise choose the location to your liking
+2. create the argos3-dist folder in the above location (or whatever you call it)
+3. install things, follow the procedure as normal, there is just an additional parameter in the cmake command.
+Here is an example with argos3
+
+mkdir build && cd build
+cmake -DCMAKE_INSTALL_PREFIX=$ARGOS_INSTALL_PATH/argos3-dist -DCMAKE_BUILD_TYPE=Release ../src
+make -j8
+make doc
+make install
