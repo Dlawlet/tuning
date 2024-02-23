@@ -1,0 +1,1 @@
+# to instal  argos-epuck 48 need to modify the CMAKELIST.txt confer the commit 42a52e on issue #4
