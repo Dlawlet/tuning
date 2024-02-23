@@ -1,0 +1,7 @@
+myconfig.ini
+node_modules
+package-lock.json
+jsconfig.json
+dist
+.vscode/launch.json
+.env

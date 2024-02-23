@@ -1,0 +1,36 @@
+{
+  "name": "automode-visualization-tool",
+  "version": "1.0.0",
+  "description": "This software is a web editor that allows to visualize and edit \r AutoMoDe behaviors trees. It also provides a local server that\r allows to launch a simulation through the editor using the ARGoS \r simulator.",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "start": "node -r dotenv/config devServer.js",
+    "build": "npx webpack --env.production --progress",
+    "server": "node -r dotenv/config server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/plugin-transform-react-jsx": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/iridia-proj-h-402/automode-visualization-tool.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://gitlab.com/iridia-proj-h-402/automode-visualization-tool/issues"
+  },
+  "homepage": "https://gitlab.com/iridia-proj-h-402/automode-visualization-tool#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "preact": "^10.3.3"
+  }
+}

@@ -4,7 +4,7 @@
 source setup.sh
 
 # List of directories to build
-build_dirs=("epuck/argos3-epuck/build"  "epuck/demiurge-epuck-dao/build" "epuck/experiments-loop-functions/build" "epuck/ARGoS3-AutoMoDe/build") 
+build_dirs=( "epuck/demiurge-epuck-dao/build" "epuck/experiments-loop-functions/build" "epuck/ARGoS3-AutoMoDe/build") 
 
 # Function to run a command and log if it fails
 run_cmd() {
@@ -39,7 +39,7 @@ for dir in "${build_dirs[@]}"; do
     
     run_cmd make
     if [ "$dir" != "epuck/ARGoS3-AutoMoDe/build" ]; then 
-    	run_cmd sudo make install 
+    	run_cmd  make install 
     fi
 
 

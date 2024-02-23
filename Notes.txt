@@ -1,0 +1,30 @@
+1. original with Automode template CS version3 forgaring-auto.argos afeter 1800 t=clock tick we have a ObjF around 40-48
+NB: somthing is strange: always arround 48 on first run then drop to 41-40 on next one 
+ 48-40-44-38
+ 
+2. change the only the environment
+ ----switching the goal spot to brown gives a ObjF of 29
+ ----switching the goal spot to gray90(almost white) gives  ObjF of 29-31-23
+ ----switching the goal spot to gray10(almost black) gives  ObjF of 29-31-23
+ 
+ Phase 1: tuning micro
+ steps tuning CS:
+ -Centrally at the end of the run (no propagation needed simply rerun) 
+   *directly
+     ** tune all parameters
+     QUESTION: at the nd of te run to tune for the new environment we need to some how update the irace training env to reflect the state of the new environment, then how ? what specificly should be updated ? 
+     ** tune specific paramters 
+   *after pruning 
+ -Centrally with robot runing (hard brodcasting)
+ -Decentrally at the end (federated x gossip ) 
+ -decentrally while running (federated x gossip ) 
+ 
+phase 2: Macro tuning AKA(sofware design)
+
+
+Sides Notes: 
+*not sure the objective function computed by the loopfunction coorectly state the one optimized with the CS. 
+*modules (behavior) have two types of params: Internal (eg: color threshold) external (does touched by irace optimizer, eg: probability, number of step etc)    
+* with frederico's paper on off policy we can estimate the impact of change on cs without applying them, meaning we have a CS, WE run it make some change while prodiving information about the run and we can know directly if the cahnge will matter or not. (interesting) 
+
+pour tunner deux approches: update l'environnement et faire de nouveau tourner irace a=en fixant le FSM seul les paramtres peuvent changer ou bien utiliser le off-policy assesment pour trouver les params qui perfermeront ;eiux que les params actuels, mais off-policy permet de verifier le param pas de le trouver. 

@@ -1,0 +1,9 @@
+https://arxiv.org/abs/2303.17396
+
+https://www.sciencedirect.com/science/article/pii/S2214716015300270?via%3Dihub
+
+https://www.frontiersin.org/articles/10.3389/frobt.2023.1134841/full
+
+https://www.frontiersin.org/articles/10.3389/frobt.2021.625125/full
+		"Each state is associated with a set of possible actions that can be taken to transition from one state to the other. The target policy may be deterministic—given a state it always executes the same action—or stochastic—the action to be performed is chosen with a certain probability; while the behavior policy must be stochastic (Sutton and Barto, 2018)."
+

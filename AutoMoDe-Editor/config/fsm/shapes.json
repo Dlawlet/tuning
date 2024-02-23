@@ -1,0 +1,35 @@
+{
+    "circle": {
+		"rx": 30,
+		"ry": 30,
+		"display_tag": "circle",
+		"display_opts": {
+			"class": "nodeFrame",
+			"r": 30,
+			"cx": 0,
+			"cy": 0
+		},
+		"display_text_opts": {
+			"text-anchor": "middle",
+			"dominant-baseline": "middle",
+			"x": 0,
+			"y": 0
+		},
+		"incoming_connect_type": "oval",
+        "outgoing_connect_type": "oval"
+    }, "diamond": {
+		"rx": 35,
+		"ry": 35,
+		"display_tag": "polygon",
+		"display_opts": {
+			"class": "nodeFrame",
+			"points": "35,0,0,35,-35,0,0,-35"
+		},
+		"display_text_opts": {
+			"text-anchor": "middle",
+			"dominant-baseline": "middle",
+			"x": 0,
+			"y": 0
+		}
+	}
+}
