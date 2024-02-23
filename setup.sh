@@ -1,4 +1,4 @@
-export ARGOS_INSTALL_PATH=$HOME/daremo/alt
+export ARGOS_INSTALL_PATH=$HOME/daremo/tuning
 export PKG_CONFIG_PATH=$ARGOS_INSTALL_PATH/argos3-dist/lib/pkgconfig
 export ARGOS_PLUGIN_PATH=$ARGOS_INSTALL_PATH/argos3-dist/lib/argos3
 export LD_LIBRARY_PATH=$ARGOS_PLUGIN_PATH:$LD_LIBRARY_PATH
