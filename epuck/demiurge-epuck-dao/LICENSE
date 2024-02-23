@@ -1,0 +1,50 @@
+MIT License
+
+Copyright (c) 2020 DEMIURGE Project.
+IRIDIA, Université Libre de Bruxelles, Belgium. 
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+1) The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+2) All scientific publications that include results obtained with 
+the Software or with any modified/derived version of it shall cite 
+the most appropriate of the following documents:
+
+
+  K. Hasselmann, A. Ligot, G. Francesca, and M. Birattari (2018).
+  Reference models for AutoMoDe. Technical report TR/IRIDIA/2018-002,
+  IRIDIA, Université libre de Bruxelles, Belgium.
+
+  A. Ligot, K. Hasselmann, B. Delhaisse, L. Garattoni, G. Francesca,
+  and M. Birattari (2017). AutoMoDe, NEAT, and EvoStick:
+  implementations for the E-puck robot in ARGoS3. Technical report
+  TR/IRIDIA/2017-002, IRIDIA, Université libre de Bruxelles, Belgium.
+
+  G. Francesca, M. Brambilla, A. Brutschy, L. Garattoni, R. Miletitch,
+  G. Podevijn, A. Reina, T. Soleymani, M. Salvaro, C. Pinciroli, F.
+  Mascia, V. Trianni, and M. Birattari (2015). AutoMoDe-Chocolate:
+  automatic design of control software for robot swarms.
+  Swarm Intelligence, 9(2-3), 125-152.
+
+  K. Hasselmann, F. Robert, and M. Birattari (2018) Automatic Design
+  of Communication-Based Behaviors for Robot Swarms. In: M. Dorigo, M.
+  Birattari, C. Blum, A. Christensen, A. Reina, and V. Trianni (eds)
+  Swarm Intelligence. ANTS 2018. Lecture Notes in Computer Science, vol
+  11172. Springer, Cham, Switzerland
+
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
