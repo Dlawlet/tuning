@@ -150,7 +150,7 @@ void ForagingTwoSpotsLoopFunction::PostStep() {
         m_fObjectiveFunction += itFood->second;
       }
       m_mapFoodData[strRobotId] = 0;
-      // LOG << "Obj " << m_fObjectiveFunction << std::endl;
+      LOG << "Obj " << m_fObjectiveFunction << std::endl;
     }
   }
   if (score_temp != m_fObjectiveFunction) {

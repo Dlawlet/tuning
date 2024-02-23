@@ -4,7 +4,7 @@
 source setup.sh
 
 # List of directories to build
-build_dirs=("epuck/argos3-epuck/build" "epuck/ARGoS3-AutoMoDe/build" "epuck/demiurge-epuck-dao/build" "epuck/experiments-loop-functions/build") 
+build_dirs=("epuck/argos3-epuck/build"  "epuck/demiurge-epuck-dao/build" "epuck/experiments-loop-functions/build" "epuck/ARGoS3-AutoMoDe/build") 
 
 # Function to run a command and log if it fails
 run_cmd() {
