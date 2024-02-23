@@ -1,0 +1,9 @@
+[{
+    "name": "State",
+    "id": 0,
+    "display_text": "S",
+    "max_incoming_edges": 10,
+    "max_outgoing_edges": 10,
+    "shape": "circle",
+    "first_decoration": "double"
+}]

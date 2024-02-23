@@ -1,0 +1,50 @@
+[{
+    "name": "Selector",
+    "id": 0,
+    "display_text": "?",
+    "max_incoming_edges": 1,
+    "max_outgoing_edges": 10,
+    "shape": "rect"
+}, {
+    "name": "Selector*",
+    "id": 1,
+    "display_text": "?*",
+    "max_incoming_edges": 1,
+    "max_outgoing_edges": 10,
+    "shape": "rect"
+}, {
+    "name": "Sequence",
+    "id": 2,
+    "display_text": "⟶",
+    "max_incoming_edges": 1,
+    "max_outgoing_edges": 10,
+    "shape": "rect"
+}, {
+    "name": "Sequence*",
+    "id": 3,
+    "display_text": "⟶*",
+    "max_incoming_edges": 1,
+    "max_outgoing_edges": 10,
+    "shape": "rect"
+}, {
+    "name": "Decorator",
+    "id": 4,
+    "display_text": "δ",
+    "max_incoming_edges": 1,
+    "max_outgoing_edges": 10,
+    "shape": "rect"
+}, {
+    "name": "Action",
+    "id": 5,
+    "display_text": "A",
+    "max_incoming_edges": 1,
+    "max_outgoing_edges": 0,
+    "shape": "circle"
+}, {
+    "name": "Condition",
+    "id": 6,
+    "display_text": "C",
+    "max_incoming_edges": 1,
+    "max_outgoing_edges": 0,
+    "shape": "diamond"
+}]

@@ -1,0 +1,69 @@
+[
+    {
+        "typeid": 0,
+        "categoryid": "s",
+        "categories_name": "Behavior",
+        "categories": [
+            {
+              "name": "Exploration",
+              "id": 0,
+              "display_name": "Exp",
+              "params": [
+                  {
+                      "name": "Steps Range",
+                      "id": "rwm",
+                      "min": 0,
+                      "max": 100,
+                      "step": 1
+                  }
+              ]
+          },
+          {
+              "name": "Stop",
+              "id": 1,
+              "display_name": "Stop",
+              "params": []
+          },
+          {
+              "name": "Phototaxis",
+              "id": 2,
+              "display_name": "Pha",
+              "params": []
+          },
+          {
+              "name": "Anti-phototaxis",
+              "id": 3,
+              "display_name": "APha",
+              "params": []
+          },
+          {
+              "name": "Attraction",
+              "id": 4,
+              "display_name": "Attr",
+              "params": [
+                  {
+                      "name": "Attraction",
+                      "id": "att",
+                      "min": 1,
+                      "max": 5,
+                      "step": 1
+                  }
+              ]
+          },
+          {
+              "name": "Repulsion",
+              "id": 5,
+              "display_name": "Rep",
+              "params": [
+                  {
+                      "name": "Repulsion",
+                      "id": "rep",
+                      "min": 1,
+                      "max": 5,
+                      "step": 1
+                  }
+              ]
+          }
+        ]
+    }
+]
