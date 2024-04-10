@@ -3,5 +3,7 @@ export PKG_CONFIG_PATH=$ARGOS_INSTALL_PATH/argos3-dist/lib/pkgconfig
 export ARGOS_PLUGIN_PATH=$ARGOS_INSTALL_PATH/argos3-dist/lib/argos3
 export LD_LIBRARY_PATH=$ARGOS_PLUGIN_PATH:$LD_LIBRARY_PATH
 export PATH=$ARGOS_INSTALL_PATH/argos3-dist/bin/:$PATH
+export IRACE_HOME=$HOME/R/x86_64-pc-linux-gnu-library/3.6/irace/bin/
+export PATH=${IRACE_HOME}:$PATH
 source /opt/ros/noetic/setup.bash
 echo ok 

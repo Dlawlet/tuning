@@ -122,8 +122,22 @@ namespace argos {
 	/****************************************/
 	/****************************************/
 
-  bool AutoMoDeCondition::EvaluateBernoulliProbability(const Real& f_probability) const {
+  bool AutoMoDeCondition::EvaluateBernoulliProbability(const Real& f_probability){
+                m_pbTransition = f_probability; //inserted for loggin purposes
 		return m_pcRobotDAO->GetRandomNumberGenerator()->Bernoulli(f_probability);
 	}
 
+	/****************************************/
+	/****************************************/
+
+  float AutoMoDeCondition::GetPbTransition() {
+		return m_pbTransition;
+	}
+
+	/****************************************/
+	/****************************************/
+
+  void AutoMoDeCondition::SetPbTransition(float pbTransition) {
+		m_pbTransition = pbTransition;
+	}
 }

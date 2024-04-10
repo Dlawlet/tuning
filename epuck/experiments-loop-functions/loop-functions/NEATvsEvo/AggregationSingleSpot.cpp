@@ -74,6 +74,7 @@ void AggregationSingleSpot::Reset() {
 /****************************************/
 
 void AggregationSingleSpot::PostStep() {
+  //
 }
 
 /****************************************/

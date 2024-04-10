@@ -21,6 +21,8 @@
 #include "./AutoMoDeFiniteStateMachine.h"
 #include "./AutoMoDeFsmBuilder.h"
 
+/*#include "../modules/AutoMoDeFsmUpdator.h"*/
+
 #include <argos3/plugins/robots/e-puck/control_interface/ci_epuck_wheels_actuator.h>
 #include <argos3/plugins/robots/e-puck/control_interface/ci_epuck_range_and_bearing_sensor.h>
 #include <argos3/plugins/robots/e-puck/control_interface/ci_epuck_range_and_bearing_actuator.h>
@@ -69,6 +71,10 @@ namespace argos{
 			void SetFiniteStateMachine(AutoMoDeFiniteStateMachine* pc_fine_state_machine);
 
 			void SetHistoryFlag(bool b_history_flag);
+
+			void UpdateFSM(std::string NewFsmConfig);
+
+            AutoMoDeController *GetInstance();
 
 		private:
 			/*

@@ -56,6 +56,10 @@ namespace argos {
 			 */
 			EpuckDAO* m_pcRobotDAO;
 
+                        /*
+                         * Transition probability as calculated in the last control step.
+                         */
+			float m_pbTransition;
 		public:
 
 			virtual ~AutoMoDeCondition(){};
@@ -111,6 +115,12 @@ namespace argos {
 			const UInt32& GetIdentifier() const;
 
 			/*
+ 			 * Getter and setter for the transition probability
+                         */
+                        float GetPbTransition();
+                        void SetPbTransition(float pbTransition);
+
+			/*
 			 * Adds a pair <parameter, value> to the parameters map.
 			 */
 			void AddParameter(const std::string& str_identifier, const Real& f_value);
@@ -138,7 +148,7 @@ namespace argos {
 			/*
 			 * Returns a random value from a Bernoulli distribution.
 			 */
-			bool EvaluateBernoulliProbability(const Real& f_probability) const;
+			bool EvaluateBernoulliProbability(const Real& f_probability);
 	};
 }
 

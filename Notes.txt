@@ -28,3 +28,11 @@ Sides Notes:
 * with frederico's paper on off policy we can estimate the impact of change on cs without applying them, meaning we have a CS, WE run it make some change while prodiving information about the run and we can know directly if the cahnge will matter or not. (interesting) 
 
 pour tunner deux approches: update l'environnement et faire de nouveau tourner irace a=en fixant le FSM seul les paramtres peuvent changer ou bien utiliser le off-policy assesment pour trouver les params qui perfermeront ;eiux que les params actuels, mais off-policy permet de verifier le param pas de le trouver. 
+
+
+
+
+#####
+work with R 3.6 and Irace 2.2.170M eanable the access to dependecy file solving the grammar issue. 
+
+history file arenot generated if history="true" is written in argos file. 

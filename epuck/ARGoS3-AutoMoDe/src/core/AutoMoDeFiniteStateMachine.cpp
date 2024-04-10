@@ -96,18 +96,21 @@ namespace argos {
 			}
 			else {
 				std::random_shuffle(m_vecCurrentConditions.begin(), m_vecCurrentConditions.end());
+				bool first = true;
 				for (std::vector<AutoMoDeCondition*>::iterator it = m_vecCurrentConditions.begin(); it != m_vecCurrentConditions.end(); it++) {
 					/*
 					 * 3. Update current behaviour
 					 */
-					if ((*it)->Verify()) {
+					bool is_verified = (*it)->Verify(); // To allow the recording of the full log all the transition will be saved in m_mapConditionsCheched
+					if (is_verified && first) {
 						m_mapConditionsChecked.insert(std::pair<AutoMoDeCondition*, bool>((*it), true));
 						m_unCurrentBehaviourIndex = (*it)->GetExtremity();
 						m_pcCurrentBehaviour = m_vecBehaviours.at(m_unCurrentBehaviourIndex);
 						m_bEnteringNewState = true;
-						break;
+						//break;
+						first = false;
 					} else {
-						m_mapConditionsChecked.insert(std::pair<AutoMoDeCondition*, bool>((*it), false));
+						m_mapConditionsChecked.insert(std::pair<AutoMoDeCondition*, bool>((*it), is_verified));
 					}
 				}
 			}

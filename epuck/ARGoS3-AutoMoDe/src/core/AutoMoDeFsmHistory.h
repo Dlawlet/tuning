@@ -24,6 +24,7 @@
 #include <sstream>
 #include <string>
 #include <map>
+#include <vector>
 
 namespace argos {
 	class AutoMoDeFsmHistory {
@@ -57,6 +58,11 @@ namespace argos {
 			 * Open the file where the history will be saved.
 			 */
 			void OpenFile();
+	                
+			/*
+			 * Prints the content of the buffer to the file
+			 */
+                        void CloseFile();
 
 		private:
 			/*
@@ -68,7 +74,10 @@ namespace argos {
 			 * Content of the history.
 			 */
 			std::ofstream m_ofHistoryFile;
-
+                        /*
+ 			* Buffer to avoid writing conflicts
+ 			*/
+			std::vector< std::string> m_buffer;
 			/*
 			 * Returns the path of the history file.
 			 */

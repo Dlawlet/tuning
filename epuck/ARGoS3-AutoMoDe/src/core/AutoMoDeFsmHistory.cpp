@@ -10,6 +10,7 @@
 
 #include "AutoMoDeFsmHistory.h"
 
+
 namespace argos {
 
 	/****************************************/
@@ -31,7 +32,9 @@ namespace argos {
 	/****************************************/
 	/****************************************/
 
-	AutoMoDeFsmHistory::~AutoMoDeFsmHistory() {}
+	AutoMoDeFsmHistory::~AutoMoDeFsmHistory() {
+            CloseFile();
+  	}
 
 	/****************************************/
 	/****************************************/
@@ -46,17 +49,43 @@ namespace argos {
 	/****************************************/
 	/****************************************/
 
+	void AutoMoDeFsmHistory::CloseFile() {
+        	
+		for(std::vector<std::string>::iterator it = m_buffer.begin(); it != m_buffer.end(); ++it)
+		{
+			std::cout << *it << std::endl;
+			m_ofHistoryFile << *it << std::endl;
+		}
+//	     m_ofHistoryFile.close();
+	}
+	/****************************************/
+	/****************************************/
+
 	void AutoMoDeFsmHistory::AddTimeStep(UInt32 un_time_step, AutoMoDeBehaviour* pc_current_state, std::map<AutoMoDeCondition*, bool> map_transition_status) {
 		std::stringstream ssInput;
-		ssInput << "--t " << un_time_step << " ";
-		ssInput << "--s" << pc_current_state->GetIndex() << " " << pc_current_state->GetIdentifier() << " ";
-
+		ssInput << "--t " << un_time_step << " "<< "--s" << pc_current_state->GetIndex() << " " << pc_current_state->GetIdentifier() << " ";
+		//ssInput << "--s" << pc_current_state->GetIndex() << " " << pc_current_state->GetIdentifier() << " ";
+               
 		std::map<AutoMoDeCondition*, bool>::iterator it;
+                bool first = true;
+                int t_active = 0;
 		for (it = map_transition_status.begin(); it != map_transition_status.end(); ++it) {
-			ssInput << "--c" << (it->first)->GetIndex() << " "  << (it->first)->GetIdentifier() << " " << (it->second) << " ";
+			if((it->second) && first) { //priting only the first condition that is active (the one choosen by the controller)
+			    ssInput << "--c" << (it->first)->GetIndex() << " "  << (it->first)->GetIdentifier() << " " << (it->second) << " " << (it->first)->GetPbTransition() << " ";
+                            t_active++;
+                            first = false;
+			} else if((it->second)){
+                            t_active++; 
+			    //ssInput << "0 ";
+			}
 		}
-
-		m_ofHistoryFile << ssInput.str() << std::endl;
+		if(t_active > 0) {
+               		ssInput << "--a " << t_active << " "; //printing number of active transitions
+		}
+                        ssInput << "--n " << pc_current_state->GetRobotDAO()->GetNumberNeighbors() << " "; //Printing number of neighbors
+                        ssInput << "--f " << pc_current_state->GetRobotDAO()->GetGroundReading() << " "; //Printing ground floor reading
+		//m_ofHistoryFile << ssInput.str() << std::endl;
+		m_buffer.push_back(ssInput.str());
 	}
 
 	/****************************************/
@@ -66,8 +95,8 @@ namespace argos {
 		std::stringstream ssInput;
 		ssInput << "--t " << un_time_step << " ";
 		ssInput << "--s" << pc_current_state->GetIndex() << " " << pc_current_state->GetIdentifier() << " ";
-
-		m_ofHistoryFile << ssInput.str() << std::endl;
+		m_buffer.push_back(ssInput.str());
+		//m_ofHistoryFile << ssInput.str() << std::endl;
 	}
 
 	/****************************************/
