@@ -169,6 +169,11 @@ namespace argos {
 			 * Setter for the shared pointer to the representation of the robot state.
 			 */
 			void SetRobotDAO(EpuckDAO* pc_robot_dao);
+			
+			/*
+			 * Getter for the shared pointer to the representation of the robot state.
+			 */
+			EpuckDAO* GetRobotDAO();
 	};
 }
 

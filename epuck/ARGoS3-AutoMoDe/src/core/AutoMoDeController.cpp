@@ -9,6 +9,8 @@
  */
 
 #include "AutoMoDeController.h"
+#include "../modules/AutoMoDeFsmUpdator.h"
+
 
 namespace argos {
 
@@ -144,6 +146,17 @@ namespace argos {
 		}
 		m_unTimeStep++;
 
+		/*
+		 * 5. Update the FSM if needed
+		 */
+		// pass all the necessary parameters to the FSM Updator
+		AutoMoDeFsmUpdator updator;
+		AutoMoDeController* instance = GetInstance();
+		updator.UpdateFsmLauncher(instance, m_unTimeStep);
+
+		
+		
+
 	}
 
 	/****************************************/
@@ -195,6 +208,19 @@ namespace argos {
 			data[3] = 0;
 			m_pcRabActuator->SetData(data);
 		}
+	}
+
+	void AutoMoDeController::UpdateFSM(std::string NewFsmConfig){
+		//Construct a new FSM using AutoMoDeFsmBuilder and vecNewConfigFSm
+		AutoMoDeFiniteStateMachine* pcNewFiniteStateMachine = m_pcFsmBuilder->BuildFiniteStateMachine(NewFsmConfig);
+		// Replace the current FSM with the new one 
+		SetFiniteStateMachine(pcNewFiniteStateMachine);
+
+	}
+
+	AutoMoDeController* AutoMoDeController::GetInstance(){
+		//return the instance of the controller
+		return this;
 	}
 
 	REGISTER_CONTROLLER(AutoMoDeController, "automode_controller");

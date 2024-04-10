@@ -26,8 +26,10 @@ using namespace argos;
 const std::string ExplainParameters() {
 	std::string strExplanation = "Missing finite state machine configuration. The possible parameters are: \n\n"
 		" -r | --readable-fsm \t Prints an URL containing a DOT representation of the finite state machine [OPTIONAL]. \n"
-		" -s | --seed \t The seed for the ARGoS simulator [OPTIONAL] \n"
-		" --fsm-config CONF \t The finite state machine description [MANDATORY]\n"
+		" -s | --seed         \t The seed for the ARGoS simulator [OPTIONAL] \n"
+                " -t | --history      \t The controller execution will be logged in a history file [OPTIONAL] \n"
+                " -h | --help         \t if a finite state machine is not specified it will print this message [OPTIONAL] \n"
+		" --fsm-config CONF   \t The finite state machine description [MANDATORY]\n"
 		"\n The description of the finite state machine should be placed at the end of the command line, after the other parameters.";
 	return strExplanation;
 }
@@ -39,7 +41,7 @@ const std::string ExplainParameters() {
 int main(int n_argc, char** ppch_argv) {
 
 	bool bHistory = false;
-
+        bool bHelp = false;
 	bool bReadableFSM = false;
 	std::vector<std::string> vecConfigFsm;
 	bool bFsmControllerFound = false;
@@ -61,10 +63,17 @@ int main(int n_argc, char** ppch_argv) {
 				}
 				// Do not take the FSM configuration into account in the standard command line parsing.
 				n_argc = n_argc - vecConfigFsm.size() - 1;
-			}
+			} else if(strcmp(ppch_argv[nCurrentArgument], "--help") == 0 || strcmp(ppch_argv[nCurrentArgument], "-h") == 0 ){
+                         bHelp = true;
+                        }
 			nCurrentArgument++;
 		}
 		if (!bFsmControllerFound) {
+                        if(bHelp){
+			  //printing help
+                          std::cout << ExplainParameters() << std::endl;
+                          std::exit(0);
+                        }
 			THROW_ARGOSEXCEPTION(ExplainParameters());
 		}
 

@@ -158,7 +158,6 @@ namespace argos {
 
 	void AutoMoDeFsmBuilder::HandleTransition(std::vector<std::string>& vec_fsm_transition_config, const UInt32& un_initial_state_index, const UInt32& un_condition_index) {
 		AutoMoDeCondition* cNewCondition;
-
 		std::stringstream ss;
 		ss << "--n" << un_initial_state_index << "x" << un_condition_index;
 		std::vector<UInt32> vecPossibleDestinationIndex = GetPossibleDestinationBehaviour(un_initial_state_index);
@@ -199,7 +198,7 @@ namespace argos {
 			cNewCondition->SetOriginAndExtremity(un_initial_state_index, unToBehaviour);
 			cNewCondition->SetIndex(un_condition_index);
 			cNewCondition->SetIdentifier(unConditionIdentifier);
-
+			cNewCondition->SetPbTransition(0.0f);
 
 			// Checking for parameters
 			std::string vecPossibleParameters[] = {"p", "w"};
