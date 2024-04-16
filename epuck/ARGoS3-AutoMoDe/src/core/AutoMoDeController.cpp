@@ -25,6 +25,11 @@ namespace argos {
 		m_bPrintReadableFsm = false;
 		m_strHistoryFolder = "./";
 		m_bFiniteStateMachineGiven = false;
+		NYF_old_neighbors_count = 0; // Declare and initialize NYF_old_neighbors_count
+		NYF_reward = 0; // Declare and initialize NYF_reward	
+
+
+
 	}
 
 	/****************************************/
@@ -99,6 +104,8 @@ namespace argos {
 		 * Starts actuation.
 		 */
 		 InitializeActuation();
+
+
 	}
 
 	/****************************************/
@@ -150,9 +157,17 @@ namespace argos {
 		 * 5. Update the FSM if needed
 		 */
 		// pass all the necessary parameters to the FSM Updator
-		AutoMoDeFsmUpdator updator;
+/* 		for (int i = 0; i < m_pcRobotState->GetNumberNeighbors(); i++){
+			std::cout << "Neighbor " << i << " ID: " << m_pcRobotState->GetRangeAndBearingMessages()[i]->Data[0] << std::endl;
+		} this for loop is just to show how to access the data of the neighbors 
+		to set data for the neighbors to access it just use the following code: */
+
+		//evaluate reward base on number of neighbors
+		Reward(m_pcRobotState->GetNumberNeighbors(), m_pcRobotState->GetGroundReading());
+
+		// if updater doesn't exist yet create it else pass 
 		AutoMoDeController* instance = GetInstance();
-		updator.UpdateFsmLauncher(instance, m_unTimeStep);
+		updator.UpdateFsmLauncher(instance, m_unTimeStep, &m_strFsmConfiguration);
 
 		
 		
@@ -218,8 +233,25 @@ namespace argos {
 
 	}
 
-	AutoMoDeController* AutoMoDeController::GetInstance(){
-		//return the instance of the controller
+	std::int32_t AutoMoDeController::Reward(int32_t neighbors, float ground) { // Modify the function signature to use int32_t as the parameter type and return type
+		int version = 2;
+		if (version == 1){
+			if (neighbors >= NYF_old_neighbors_count) {
+				NYF_reward += 1;
+				NYF_old_neighbors_count = neighbors;
+			}
+			return NYF_reward;
+		}
+		else {
+			// note black and white threshold isn't define in the fsm but in the Reference model of the censor, therefore may not optimisable right ?
+			//note since the modification impact directly the controller it can saturate the program, the first issue spotter the time is not more coherent with reality time. 
+			if (ground < 0.5){
+				NYF_reward +=1 ;
+			}
+		}
+	}
+	AutoMoDeController* AutoMoDeController::GetInstance() {
+		// Return the instance of the controller
 		return this;
 	}
 

@@ -21,7 +21,7 @@
 #include "./AutoMoDeFiniteStateMachine.h"
 #include "./AutoMoDeFsmBuilder.h"
 
-/*#include "../modules/AutoMoDeFsmUpdator.h"*/
+#include "../modules/AutoMoDeFsmUpdator.h"
 
 #include <argos3/plugins/robots/e-puck/control_interface/ci_epuck_wheels_actuator.h>
 #include <argos3/plugins/robots/e-puck/control_interface/ci_epuck_range_and_bearing_sensor.h>
@@ -74,9 +74,13 @@ namespace argos{
 
 			void UpdateFSM(std::string NewFsmConfig);
 
+            int Reward(int32_t neighbors, float ground) ;
+			int NYF_old_neighbors_count ;
+			int NYF_reward;
             AutoMoDeController *GetInstance();
+			AutoMoDeFsmUpdator updator;
 
-		private:
+        private:
 			/*
 			 * Function that contains all actuations required at the start of an experiment or during the entire experiment.
 			 * Example of what you might add in the future: display LED colors, start omnidirectional camera, etc.
@@ -173,6 +177,9 @@ namespace argos{
 			CCI_EPuckOmnidirectionalCameraSensor* m_pcCameraSensor;
 
 			bool m_bFiniteStateMachineGiven;
+
+			
+
 	};
 }
 
