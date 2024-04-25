@@ -38,6 +38,11 @@ include(${CMAKE_SOURCE_DIR}/src/cmake/ARGoSPackaging.cmake)
 
 include(${CMAKE_SOURCE_DIR}/src/cmake/FindPthreads.cmake)
 
+#
+# Set up GAlib
+#
+include(${CMAKE_SOURCE_DIR}/src/cmake/FindGALIB.cmake)
+
 
 #
 # Compile stuff

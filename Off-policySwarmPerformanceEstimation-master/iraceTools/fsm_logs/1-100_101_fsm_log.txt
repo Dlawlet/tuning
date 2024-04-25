@@ -1,0 +1,383 @@
+--fsm-config 101 --nstates 2 --s0 0 --rwm0 42 --n0 4 --n0x0 0 --c0x0 0 --p0x0 0.64 --n0x1 0 --c0x1 0 --p0x1 0.92 --n0x2 0 --c0x2 1 --p0x2 0.52 --n0x3 0 --c0x3 5 --p0x3 0.12 --s1 0 --rwm1 1 --n1 2 --n1x0 0 --c1x0 3 --p1x0 9 --w1x0 5.87 --n1x1 0 --c1x1 5 --p1x1 0.1
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_eyebot.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_qtopengl.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_epuck.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3_demiurge_loop_functions.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3core_simulator.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3_demiurge_epuck_dao.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_entities.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_spiri.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_footbot.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_pointmass3d.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_dynamics2d.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_genericrobot.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/argos3-dist/lib/argos3/libargos3plugin_simulator_media.so"
+[INFO] Not using threads
+[INFO] Using random seed = 2024
+[INFO] Using simulation clock tick = 0.1
+[INFO] Total experiment length in clock ticks = 1800
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/epuck/ARGoS3-AutoMoDe/build/src/libautomode.so"
+[INFO] Loaded library "/home/ubuntu/daremo/tuning/epuck/experiments-loop-functions/build/loop-functions/vanilla/libforaging_loopfunc.so"
+[INFO] The physics engine "dyn2d" will perform 10 iterations per tick (dt = 0.01 sec)
+[INFO] No visualization selected.
+Score 23
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s1 0 --c3 3 1 0.12 --a 1 --n 0 --f 0.5 
+--t 2 --s1 0 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 1 
+--t 4 --s1 0 --n 0 --f 1 
+--t 5 --s1 0 --n 0 --f 1 
+--t 6 --s1 0 --n 0 --f 1 
+--t 7 --s1 0 --n 0 --f 1 
+--t 8 --s1 0 --n 0 --f 1 
+--t 9 --s1 0 --n 0 --f 1 
+--t 10 --s1 0 --n 0 --f 1 
+--t 11 --s1 0 --n 0 --f 1 
+--t 12 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 1 
+--t 13 --s0 0 --n 0 --f 1 
+--t 14 --s1 0 --c3 3 1 0.12 --a 1 --n 0 --f 1 
+--t 15 --s1 0 --n 0 --f 1 
+--t 16 --s1 0 --n 0 --f 1 
+--t 17 --s1 0 --n 0 --f 1 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 2 --s1 0 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s1 0 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 15 --s0 0 --n 0 --f 0.5 
+--t 16 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 2 --s1 0 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 10 --s0 0 --n 0 --f 0.5 
+--t 11 --s0 0 --n 0 --f 0.5 
+--t 12 --s0 0 --n 0 --f 0.5 
+--t 13 --s0 0 --n 0 --f 0.5 
+--t 14 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 2 --s1 0 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 5 --s0 0 --n 0 --f 0.5 
+--t 6 --s0 0 --n 0 --f 0.5 
+--t 7 --s0 0 --n 0 --f 0.5 
+--t 8 --s0 0 --n 0 --f 0.5 
+--t 9 --s0 0 --n 0 --f 0.5 
+--t 10 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s1 0 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 17 --s0 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s1 0 --c2 2 1 0.52 --a 2 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s1 0 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s1 0 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 2 --s1 0 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 1 
+--t 4 --s1 0 --n 0 --f 1 
+--t 5 --s1 0 --n 0 --f 1 
+--t 6 --s1 0 --n 0 --f 1 
+--t 7 --s1 0 --n 0 --f 1 
+--t 8 --s1 0 --n 0 --f 1 
+--t 9 --s1 0 --n 0 --f 1 
+--t 10 --s1 0 --n 0 --f 1 
+--t 11 --s1 0 --n 0 --f 1 
+--t 12 --s1 0 --n 0 --f 1 
+--t 13 --s1 0 --n 0 --f 1 
+--t 14 --s1 0 --n 0 --f 1 
+--t 15 --s1 0 --n 0 --f 1 
+--t 16 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 1 
+--t 17 --s0 0 --n 0 --f 1 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 1 
+--t 4 --s1 0 --n 0 --f 1 
+--t 5 --s1 0 --n 0 --f 1 
+--t 6 --s1 0 --n 0 --f 1 
+--t 7 --s1 0 --n 0 --f 1 
+--t 8 --s1 0 --n 0 --f 1 
+--t 9 --s1 0 --n 0 --f 1 
+--t 10 --s1 0 --n 0 --f 1 
+--t 11 --s1 0 --n 0 --f 1 
+--t 12 --s1 0 --n 0 --f 1 
+--t 13 --s1 0 --n 0 --f 1 
+--t 14 --s1 0 --n 0 --f 1 
+--t 15 --s1 0 --n 0 --f 1 
+--t 16 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 1 
+--t 17 --s0 0 --n 0 --f 1 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s1 0 --c2 2 1 0.52 --a 2 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 6 --s0 0 --n 0 --f 0.5 
+--t 7 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s1 0 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s1 0 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 1 
+--t 4 --s1 0 --n 0 --f 1 
+--t 5 --s1 0 --n 0 --f 1 
+--t 6 --s1 0 --n 0 --f 1 
+--t 7 --s1 0 --n 0 --f 1 
+--t 8 --s1 0 --n 0 --f 1 
+--t 9 --s1 0 --n 0 --f 1 
+--t 10 --s1 0 --n 0 --f 1 
+--t 11 --s1 0 --n 0 --f 1 
+--t 12 --s1 0 --n 0 --f 1 
+--t 13 --s1 0 --n 0 --f 1 
+--t 14 --s1 0 --n 0 --f 1 
+--t 15 --s1 0 --n 0 --f 1 
+--t 16 --s1 0 --n 0 --f 1 
+--t 17 --s1 0 --n 0 --f 1 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 1 
+--t 4 --s1 0 --n 0 --f 1 
+--t 5 --s1 0 --n 0 --f 1 
+--t 6 --s1 0 --n 0 --f 1 
+--t 7 --s1 0 --n 0 --f 1 
+--t 8 --s1 0 --n 0 --f 1 
+--t 9 --s1 0 --n 0 --f 1 
+--t 10 --s1 0 --n 0 --f 1 
+--t 11 --s1 0 --n 0 --f 1 
+--t 12 --s1 0 --n 0 --f 1 
+--t 13 --s1 0 --n 0 --f 1 
+--t 14 --s1 0 --n 0 --f 1 
+--t 15 --s1 0 --n 0 --f 1 
+--t 16 --s1 0 --n 0 --f 1 
+--t 17 --s1 0 --n 0 --f 1 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 2 --s1 0 --n 0 --f 0.5 
+--t 3 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 4 --s0 0 --n 0 --f 0.5 
+--t 5 --s0 0 --n 0 --f 0.5 
+--t 6 --s0 0 --n 0 --f 0.5 
+--t 7 --s0 0 --n 0 --f 0.5 
+--t 8 --s0 0 --n 0 --f 0.5 
+--t 9 --s0 0 --n 0 --f 0.5 
+--t 10 --s0 0 --n 0 --f 0.5 
+--t 11 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 14 --s0 0 --n 0 --f 0.5 
+--t 15 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s0 0 --n 0 --f 0.5 
+--t 3 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 11 --s0 0 --n 0 --f 0.5 
+--t 12 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s1 0 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 9 --s0 0 --n 0 --f 0.5 
+--t 10 --s1 0 --c2 2 1 0.52 --a 2 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s1 0 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s1 0 --c3 3 1 0.12 --a 1 --n 0 --f 0.5 
+--t 2 --s1 0 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 8 --s0 0 --n 0 --f 0.5 
+--t 9 --s0 0 --n 0 --f 0.5 
+--t 10 --s0 0 --n 0 --f 0.5 
+--t 11 --s0 0 --n 0 --f 0.5 
+--t 12 --s0 0 --n 0 --f 0.5 
+--t 13 --s0 0 --n 0 --f 0.5 
+--t 14 --s0 0 --n 0 --f 0.5 
+--t 15 --s0 0 --n 0 --f 0.5 
+--t 16 --s0 0 --n 0 --f 0.5 
+--t 17 --s1 0 --c2 2 1 0.52 --a 2 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s1 0 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s1 0 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 17 --s0 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 2 --s1 0 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s1 0 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s1 0 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s1 0 --c2 2 1 0.52 --a 2 --n 0 --f 0.5 
+--t 2 --s1 0 --n 0 --f 0.5 
+--t 3 --s1 0 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s1 0 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 14 --s0 0 --n 0 --f 0.5 
+--t 15 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s0 0 --n 0 --f 0.5 
+--t 3 --s0 0 --n 0 --f 0.5 
+--t 4 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s1 0 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s0 0 --c1 1 1 0.1 --a 1 --n 0 --f 0.5 
+--t 14 --s0 0 --n 0 --f 0.5 
+--t 15 --s0 0 --n 0 --f 0.5 
+--t 16 --s1 0 --c3 3 1 0.12 --a 1 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s0 0 --n 0 --f 0.5 
+--t 3 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 4 --s1 0 --n 0 --f 0.5 
+--t 5 --s1 0 --n 0 --f 0.5 
+--t 6 --s1 0 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s1 0 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s1 0 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
+--t 0 --s0 0 --n 0 --f 0.5 
+--t 1 --s0 0 --n 0 --f 0.5 
+--t 2 --s0 0 --n 0 --f 0.5 
+--t 3 --s0 0 --n 0 --f 1 
+--t 4 --s0 0 --n 0 --f 1 
+--t 5 --s0 0 --n 0 --f 1 
+--t 6 --s1 0 --c2 2 1 0.52 --a 1 --n 0 --f 0.5 
+--t 7 --s1 0 --n 0 --f 0.5 
+--t 8 --s1 0 --n 0 --f 0.5 
+--t 9 --s1 0 --n 0 --f 0.5 
+--t 10 --s1 0 --n 0 --f 0.5 
+--t 11 --s1 0 --n 0 --f 0.5 
+--t 12 --s1 0 --n 0 --f 0.5 
+--t 13 --s1 0 --n 0 --f 0.5 
+--t 14 --s1 0 --n 0 --f 0.5 
+--t 15 --s1 0 --n 0 --f 0.5 
+--t 16 --s1 0 --n 0 --f 0.5 
+--t 17 --s1 0 --n 0 --f 0.5 
