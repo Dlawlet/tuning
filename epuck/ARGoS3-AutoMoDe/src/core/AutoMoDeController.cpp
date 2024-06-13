@@ -193,10 +193,10 @@ namespace argos {
 		// here we will try to retreive the score of current fsm and the history of the fsm
 		// Retrieval of the score of the swarm driven by the Finite State Machine (Copied from the AutoMoDeMain.cpp)
 		// Declare and initialize the variable "cSimulator"
-		CSimulator& cSimulator = CSimulator::GetInstance();
-		CoreLoopFunctions& cLoopFunctions = dynamic_cast<CoreLoopFunctions&> (cSimulator.GetLoopFunctions());
-		Real fObjectiveFunction = cLoopFunctions.GetObjectiveFunction();
-		std::cout << "Score " << fObjectiveFunction << std::endl;
+		//CSimulator& cSimulator = CSimulator::GetInstance();
+		//CoreLoopFunctions& cLoopFunctions = dynamic_cast<CoreLoopFunctions&> (cSimulator.GetLoopFunctions());
+		//Real fObjectiveFunction = cLoopFunctions.GetObjectiveFunction();
+		//std::cout << "Score " << fObjectiveFunction << std::endl;
 	
 	}
 

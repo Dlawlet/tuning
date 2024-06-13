@@ -1,11 +1,12 @@
-#!/bin/bas
+#!/bin/bash
+#Daremo version
 # Path to the AutoMoDe software:
 EXE=/home/ubuntu/daremo/tuning/epuck/ARGoS3-AutoMoDe/bin/automode_main
 
 IRACE_OUT="$1"
-INSTANCE="$2"
+MISSION="$2"
 #SEED=$RANDOM 
-SEED=2024
+SEED=7676
 
 # In case of error, we print the current time:
 error() {
@@ -20,7 +21,7 @@ fi
 extract_and_execute() {
     awk '/Best configurations as commandlines/{flag=1} flag' "$IRACE_OUT" | tail -n +2 | while read -r id config_params; do
         echo "Executing command for ID: $id"
-        OUTPUT=$($EXE -n -c $INSTANCE --seed $SEED -t --fsm-config ${config_params})
+        OUTPUT=$($EXE -n -c $MISSION --seed $SEED -t --fsm-config ${config_params})
         # Extract the score from the AutoMoDe (i.e. and ARGoS) output
 	SCORE=$(echo ${OUTPUT} | grep -o -E 'Score [-+0-9.e]+' | cut -d ' ' -f2)
 	if ! [[ "$SCORE" =~ ^[-+0-9.e]+$ ]] ; then

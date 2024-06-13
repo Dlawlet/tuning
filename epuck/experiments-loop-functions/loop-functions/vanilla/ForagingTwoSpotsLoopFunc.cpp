@@ -51,12 +51,12 @@ argos::CColor ForagingTwoSpotsLoopFunction::GetFloorColor(const argos::CVector2&
   CVector2 vCurrentPoint(c_position_on_plane.GetX(), c_position_on_plane.GetY());
   Real d = (m_cCoordSpot1 - vCurrentPoint).Length();
   if (d <= m_fRadius) {
-    return CColor::BROWN;
+    return CColor::BLACK;
   }
 
   d = (m_cCoordSpot2 - vCurrentPoint).Length();
   if (d <= m_fRadius) {
-    return CColor::BROWN;
+    return CColor::BLACK;
   }
 
   // if (vCurrentPoint.GetY() > m_fNestLimit)
@@ -154,7 +154,7 @@ void ForagingTwoSpotsLoopFunction::PostStep() {
     }
   }
   if (score_temp != m_fObjectiveFunction) {
-    LOGERR << "Obj " << m_fObjectiveFunction << std::endl;
+    //LOGERR << "Obj " << m_fObjectiveFunction << std::endl;
   }
 }
 

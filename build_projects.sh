@@ -4,7 +4,7 @@
 source setup.sh
 
 # List of directories to build
-build_dirs=( "epuck/demiurge-epuck-dao/build" "epuck/experiments-loop-functions/build" "epuck/ARGoS3-AutoMoDe/build") 
+build_dirs=("epuck/argos3-epuck/build" "epuck/experiments-loop-functions/build" "epuck/demiurge-epuck-dao/build" "epuck/ARGoS3-AutoMoDe/build") 
 
 # Function to run a command and log if it fails
 run_cmd() {
@@ -31,10 +31,15 @@ for dir in "${build_dirs[@]}"; do
     # Run cmake, make, and make install commands
     # Check if the directory is the special case
     if [ "$dir" == "epuck/argos3-epuck/build" ]; then
-        run_cmd cmake ../src -DCMAKE_INSTALL_PREFIX=$ARGOS_INSTALL_PATH/argos3-dist
+        run_cmd cmake ../src -DCMAKE_INSTALL_PREFIX=$ARGOS_INSTALL_PATH/argos3-dist -DCMAKE_BUILD_TYPE=Release
     else
-        # Default case: Run cmake in the current directory
-        run_cmd cmake .. -DCMAKE_INSTALL_PREFIX=$ARGOS_INSTALL_PATH/argos3-dist
+        if [ "$dir" == "epuck/ARGoS3-AutoMoDe/build" ]; then 
+    		run_cmd cmake ..
+    	else  
+    		# Default case: Run cmake in the current directory
+        	run_cmd cmake .. -DCMAKE_INSTALL_PREFIX=$ARGOS_INSTALL_PATH/argos3-dist -DCMAKE_BUILD_TYPE=Release
+    	fi
+    
     fi
     
     run_cmd make

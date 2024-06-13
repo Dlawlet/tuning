@@ -145,6 +145,7 @@ float AutoMoDeFsmUpdator::Objective(std::vector<float> individual) {
 }
 
 std::vector<float>  AutoMoDeFsmUpdator::Genetic_Heuristic(std::string* old_fsm, std::vector<float> fsm_params){
+    printf("Starting genetic algorithm\n");
     // Genetic algorithm to optimize the parameters of the FSM
     // Initialize the population
     std::vector<std::vector<float>> population(5);
