@@ -175,7 +175,6 @@ namespace argos {
 		if (!isRunning) {
 			future = updator.UpdateFsmLauncherAsync(instance, m_unTimeStep, &m_strFsmConfiguration);
 			isRunning = true;
-			printf("Task started\n");
 		}
 
 		if (future.valid() && future.wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
@@ -183,16 +182,21 @@ namespace argos {
 			try {
 				future.get();  // This will not block because we know the result is ready
 				isRunning = false;  // Reset the flag
-				printf("Task finished\n");
 			} catch (...) {
 				// Handle any exceptions thrown by UpdateFsmLauncher
-				printf("Task failed\n");
 			}
 		} else {
 			// The result is not ready yet, continue with the rest of the program
 
 		}	
 
+		// here we will try to retreive the score of current fsm and the history of the fsm
+		// Retrieval of the score of the swarm driven by the Finite State Machine (Copied from the AutoMoDeMain.cpp)
+		// Declare and initialize the variable "cSimulator"
+		CSimulator& cSimulator = CSimulator::GetInstance();
+		CoreLoopFunctions& cLoopFunctions = dynamic_cast<CoreLoopFunctions&> (cSimulator.GetLoopFunctions());
+		Real fObjectiveFunction = cLoopFunctions.GetObjectiveFunction();
+		std::cout << "Score " << fObjectiveFunction << std::endl;
 	
 	}
 

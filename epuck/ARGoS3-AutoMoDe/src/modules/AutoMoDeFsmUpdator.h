@@ -32,9 +32,10 @@ class AutoMoDeFsmUpdator {
         float Objective(std::vector<float> individual);
         std::vector<float>  Genetic_Heuristic(std::string *old_fsm, std::vector<float> fsm_params);
         std::string Params_to_fsm(std::string *old_fsm, std::vector<float> new_params);
-         std::shared_future<int>  AutoMoDeFsmUpdator::UpdateFsmLauncherAsync(::argos::AutoMoDeController* instance, int m_unTimeStep, std::string* old_fsm);
+         std::shared_future<int>  UpdateFsmLauncherAsync(::argos::AutoMoDeController* instance, int m_unTimeStep, std::string* old_fsm);
 
         std::string *best_old_fsm;
+        float best_old_fsm_objective = 24.0 ; 
         float old_reward = 0;
         float default_rate_reward = 0 ;
         std::vector<std::vector<float>> used_values = {};
@@ -42,7 +43,7 @@ class AutoMoDeFsmUpdator {
         std::map<std::vector<float>, float> already_evaluated = {};
 
         // the following is a hard coded list of params changeable this need to be past as an argument when launching the program 
-        std::vector<float> fsm_params = {10,0.41,0.29,0.05,0.4,0.33};
+        std::vector<float> fsm_params;
 
 };
 

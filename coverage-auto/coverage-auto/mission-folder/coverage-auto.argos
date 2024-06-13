@@ -5,7 +5,7 @@
   <!-- ************* -->
   <framework>
     <experiment length="180"
-                ticks_per_second="10" random_seed="427557"/>
+                ticks_per_second="10" random_seed="427556"/>
   </framework>
 
   <!-- ****************** -->
@@ -34,7 +34,7 @@
           <epuck_ground implementation="rot_z_only" noise_level="0.05" calibrated="true"/>
           <epuck_omnidirectional_camera implementation="rot_z_only" medium="leds" show_rays="false"/>
         </sensors>
-        <params fsm-config="--nstates 2 --s0 0 --rwm0 57 --n0 4 --n0x0 0 --c0x0 0 --p0x0 0.35 --n0x1 0 --c0x1 0 --p0x1 0.69 --n0x2 0 --c0x2 1 --p0x2 0.82 --n0x3 0 --c0x3 5 --p0x3 0.66 --s1 0 --rwm1 58 --n1 2 --n1x0 0 --c1x0 3 --p1x0 5 --w1x0 12.39 --n1x1 0 --c1x1 5 --p1x1 0.79" />
+        <params fsm-config="--nstates 2 --s0 0 --rwm0 97 --n0 4 --n0x0 0 --c0x0 0 --p0x0 0.14 --n0x1 0 --c0x1 0 --p0x1 0.5 --n0x2 0 --c0x2 1 --p0x2 0.39 --n0x3 0 --c0x3 5 --p0x3 0.9 --s1 0 --rwm1 79 --n1 2 --n1x0 0 --c1x0 3 --p1x0 7 --w1x0 6.31 --n1x1 0 --c1x1 5 --p1x1 0.1 " />
     </automode_controller>
   </controllers>
 

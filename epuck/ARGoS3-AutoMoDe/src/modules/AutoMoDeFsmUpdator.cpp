@@ -23,80 +23,25 @@ std::shared_future<int>  AutoMoDeFsmUpdator::UpdateFsmLauncherAsync(::argos::Aut
     return std::async(std::launch::async, &AutoMoDeFsmUpdator::UpdateFsmLauncher, this, instance, m_unTimeStep, old_fsm);
 }
 
-
+void set_params_on_cmd(){
+    /* this function will containt code to initialise the the first best old fsm
+    the first best old fsm fitness
+    */
+}
 int AutoMoDeFsmUpdator::UpdateFsmLauncher(AutoMoDeController* instance, int m_unTimeStep, std::string* old_fsm){
     // Every 100 time steps, we will run an heuristic optimization process to update the fsm.
     // The optimization process will use as objective function the number of time steps the robot has been in the state 0.
     // The heuristic optimization process will change the parameters of the fsm i other to maximize the objective function value.
-    printf("UpdateFsmLauncher started\n");
-    int timelapsed = 30;
+    int timelapsed = 100;
     if (m_unTimeStep % timelapsed == 0){
-        printf("UpdateFsmLauncher checkpoint1\n");
-        /* float delta_reward = instance->NYF_reward - old_reward;
-        old_reward = instance->NYF_reward;
-        rate_reward = delta_reward / timelapsed;
-        printf("\n \n delta_reward: %.2f\n", delta_reward);
-        printf("rate_reward: %.2f\n", rate_reward);
-        if (rate_reward >= default_rate_reward){
-            default_rate_reward = rate_reward;
-            best_old_fsm = old_fsm;
-            instance->UpdateFSM(*old_fsm);
-        }
-        else {
-            old_fsm = best_old_fsm;
-            //print("best_old-fsm") for checking
-            printf("best fsm to date = %s\n",old_fsm->c_str());
-            std::string newfsm=New_fsm_generator(old_fsm);
-            instance->UpdateFSM(newfsm); 
-        } */
-        //fsm_params = extractFsmParams(old_fsm);
+        best_old_fsm = old_fsm;
+        fsm_params = extractFsmParams(old_fsm);
         fsm_params = Genetic_Heuristic(old_fsm, fsm_params);
         std::string new_fsm = Params_to_fsm(old_fsm, fsm_params);
-        printf("finished\n");
         instance->UpdateFSM(new_fsm);
         
     }
-    printf("UpdateFsmLauncher finished\n");
     return 0;
-}
-std::string AutoMoDeFsmUpdator::New_fsm_generator(std::string* old_fsm){
-    // Implementation of the New_fsm_generator function
-
-    // randomly change the params by others. this need to be change with a more sophisticated method such as a genetic algorithm or a hill climbing algorithm
-    
-    //print( params_values)
-    printf("params_values\n");
-    for (size_t i = 0; i < fsm_params.size(); i++) {
-        printf("%.2f,", fsm_params[i]);
-    }
-    // then change the values of the params while keeping a tack of previously used values
-    std::vector<float> new_params; // Declare the new_params vector
-    std::vector<std::vector<float>> used_values; // Change the type of used_values to std::vector<std::vector<float>>
-
-    //part to change to heuristic 
-    do {
-        new_params = generateNewParams(fsm_params);
-    } while (std::find(used_values.begin(), used_values.end(), new_params) != used_values.end());
-
-    used_values.push_back(new_params); // Store new params to avoid repetition later
-
-    // add new-params to used_values
-    used_values.push_back(new_params);
-    fsm_params = new_params; // need to change this to make sure fsm_params used is actually the one belonging to the old_best_fsm
-
-    //print(new_params) on single line 
-    printf("\nnew_params\n");
-    for (size_t i = 0; i < new_params.size(); i++) {
-        printf("%.2f , ", new_params[i]);
-    }
-
-    // change new params in best_old fsm 
-    std::string new_fsm = Params_to_fsm(old_fsm, new_params);
-    ///print(new_fsm)
-    //printf("%s\n", new_fsm.c_str());
-    // The optimization process will use as objective function the number of time steps the robot has been in the state 0.
-    return new_fsm;
-
 }
 
 std::vector<float> AutoMoDeFsmUpdator::generateNewParams(const std::vector<float>& old_params) {
@@ -110,13 +55,17 @@ std::vector<float> AutoMoDeFsmUpdator::generateNewParams(const std::vector<float
         float max_val = 0.0f;
         for (size_t i = 0; i < old_params.size(); i++) {
             // Create a normal distribution centered around the old parameter value
-            std::normal_distribution<float> distribution(old_params[i], 0.1);
+            std::normal_distribution<float> distribution;
             // ATTENTION need to handle value of C0x0 like params since the following lead to a switching from config else to if reciprocally 
             if (old_params[i] <= 1){
+                // Create a normal distribution centered around the old parameter value
+                std::normal_distribution<float> distribution(old_params[i], 0.1);
                 min_val = 0.0f;
                 max_val = 1.0f;
             }
             else {
+                // Create a normal distribution centered around the old parameter value
+                std::normal_distribution<float> distribution(old_params[i], 1);
                 min_val = 1.0f;
                 max_val = 10.0f;
             }
@@ -124,7 +73,10 @@ std::vector<float> AutoMoDeFsmUpdator::generateNewParams(const std::vector<float
             // Generate a new value within bounds
             do {
                 new_value = distribution(generator);
-            } while (new_value <= min_val || new_value >= max_val); // Ensure new value is clamped between 0 and 1
+                if (new_value > 1 ) {
+                    new_value = round(new_value);
+                }
+            } while (new_value <= min_val || new_value >= max_val); // Ensure new value is clamped between min and max
 
             new_params.push_back(new_value);
         }
@@ -159,16 +111,15 @@ std::vector<float> crossover(const std::vector<float>& parent1, const std::vecto
     return child;
 }
 
-
 float AutoMoDeFsmUpdator::Objective(std::vector<float> individual) {
      // Objective function to maximize
 
     if (already_evaluated.find(individual) != already_evaluated.end()) {
         return already_evaluated[individual];
     }
+    std::string individual_fsm = Params_to_fsm(best_old_fsm, individual);
     // Prepare the command
-    std::string command = "python3 /home/ubuntu/daremo/tuning/Off-policySwarmPerformanceEstimation-master/AutoMoDeLogAnalyzer.py /home/ubuntu/daremo/tuning/Off-policySwarmPerformanceEstimation-master/iraceTools/fsm_logs/1-100_90_fsm_log.txt -pa --newfsm-config --nstates 2 --s0 0 --rwm0 57 --n0 4 --n0x0 0 --c0x0 0 --p0x0 0.35 --n0x1 0 --c0x1 0 --p0x1 0.69 --n0x2 0 --c0x2 1 --p0x2 0.82 --n0x3 0 --c0x3 5 --p0x3 0.66 --s1 0 --rwm1 58 --n1 2 --n1x0 0 --c1x0 3 --p1x0 5 --w1x0 12.39 --n1x1 0 --c1x1 5 --p1x1 0.79";
-
+    std::string command = "python3 /home/ubuntu/daremo/tuning/Off-policySwarmPerformanceEstimation-master/AutoMoDeLogAnalyzer.py /home/ubuntu/daremo/tuning/Off-policySwarmPerformanceEstimation-master/iraceTools/fsm_logs/1-100_90_fsm_log.txt -pa --newfsm-config " + individual_fsm; 
     // Open the pipe
     FILE* pipe = popen(command.c_str(), "r");
     if (!pipe) {
@@ -177,7 +128,7 @@ float AutoMoDeFsmUpdator::Objective(std::vector<float> individual) {
     }
 
     // Read the output
-    char buffer[128];
+    char buffer[1024];
     float wis_value = 0.0;
     while (fgets(buffer, sizeof buffer, pipe) != NULL) {
         // Look for the pattern "WIS : <value>"
@@ -190,7 +141,6 @@ float AutoMoDeFsmUpdator::Objective(std::vector<float> individual) {
     pclose(pipe);
 
     already_evaluated[individual] = wis_value;
-
     return wis_value;
 }
 
@@ -225,17 +175,32 @@ std::vector<float>  AutoMoDeFsmUpdator::Genetic_Heuristic(std::string* old_fsm, 
         new_population[i] = crossover(new_population[i], new_population[i + 1]);
     }
 
-    printf("After crossover: \n");
-    for (size_t i = 0; i < new_population.size(); i++) {
-        printf("Individual %zu: ", i);
-        for (size_t j = 0; j < new_population[i].size(); j++) {
-            printf("%.2f, ", new_population[i][j]);
-        }
-        printf("\n");
-    }
     // Mutate
     for (size_t i = 0; i < population.size(); i++) {
         mutate(new_population[i], 0.1);
+    }
+
+    // CHECK IF ALL MEMBMERS OF THE POPULATION ARE UNIQUE, AND RESPECT THE BOUNDS OF THE PARAMS, IF NOT GENERATES NEW ONES
+    // uniqueness check
+    for (size_t i = 0; i < population.size(); i++) {
+        for (size_t j = 0; j < population.size(); j++) {
+            if (i != j){
+                if (new_population[i] == new_population[j]){
+                    new_population[i] = generateNewParams(fsm_params);
+                }
+            }
+        }
+    }
+    // bounds check
+    for (size_t i = 0; i < population.size(); i++) {
+        for (size_t j = 0; j < population.size(); j++) {
+            if (new_population[i][j] > 1 && fsm_params[j] <= 1){
+                new_population[i] = generateNewParams(fsm_params);
+            }
+            if (new_population[i][j] <= 1 && fsm_params[j] > 1){
+                new_population[i] = generateNewParams(fsm_params);
+            }
+        }
     }
 
     // Update the population
@@ -249,19 +214,23 @@ std::vector<float>  AutoMoDeFsmUpdator::Genetic_Heuristic(std::string* old_fsm, 
     // Sort the population by fitness
     std::sort(indices.begin(), indices.end(), [&fitness](size_t i1, size_t i2) { return fitness[i1] > fitness[i2]; });
 
-
-    // print the best individual
-    printf("Best individual: ");
-    for (size_t i = 0; i < population[indices[0]].size(); i++) {
-        printf("%.2f, ", population[indices[0]][i]);
+    if (fitness[indices[0]] > best_old_fsm_objective){
+        best_old_fsm_objective = fitness[indices[0]];
+        printf("Current best fsm: ");
+        for (auto& gene : population[indices[0]]) {
+            printf("%.2f ", gene);
+        }
+        printf("with objective function value: %.2f\n", fitness[indices[0]]);
+        return population[indices[0]];
     }
-    printf("\n");
-    
-    // Return the best individual
-    return population[indices[0]];
+    else {
+        printf("No improvement in the objective function value\n");
+        return fsm_params;
+    }
 
 }
 
+// Updator utilities
 std::string AutoMoDeFsmUpdator::Params_to_fsm(std::string* old_fsm, std::vector<float> new_params){
     // change new params in best_old fsm 
     std::stringstream ss2(*old_fsm);

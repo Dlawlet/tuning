@@ -22,6 +22,8 @@
 #include "./AutoMoDeFsmBuilder.h"
 
 #include "../modules/AutoMoDeFsmUpdator.h"
+#include <argos3/demiurge/loop-functions/CoreLoopFunctions.h>
+
 
 #include <argos3/plugins/robots/e-puck/control_interface/ci_epuck_wheels_actuator.h>
 #include <argos3/plugins/robots/e-puck/control_interface/ci_epuck_range_and_bearing_sensor.h>
@@ -74,7 +76,7 @@ namespace argos{
 
 			void UpdateFSM(std::string NewFsmConfig);
 			std::shared_future<int> future;  // Make it static so it persists across function calls
-			bool isRunning = false;  // Flag to check if task is still running
+			bool isRunning = true;  // Flag to check if task is still running
 			int NYF_old_neighbors_count ;
 			int NYF_reward;
             AutoMoDeController *GetInstance();
