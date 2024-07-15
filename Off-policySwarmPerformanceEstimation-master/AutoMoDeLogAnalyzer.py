@@ -53,6 +53,11 @@ import AutoMoDeFSMExperiment
 import copy
 from tqdm import tqdm
 
+import signal
+import sys
+
+signal.signal(signal.SIGPIPE, signal.SIG_DFL)
+
 #
 #  Presentation code
 ###################################################### 

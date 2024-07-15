@@ -196,7 +196,7 @@ namespace argos {
 		m_bMaintainHistory = true;
 		std::ostringstream sHistoryPath;
 		sHistoryPath << m_strHistoryFolder << "./fsm_history_" <<  m_pcRobotDAO->GetRobotIdentifier() << ".txt";
-		m_pcHistory = new AutoMoDeFsmHistory(sHistoryPath.str());
+		m_pcHistory = new AutoMoDeFsmHistory(sHistoryPath.str()); 
 	}
 
 	/****************************************/

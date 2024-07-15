@@ -75,8 +75,9 @@ namespace argos{
 			void SetHistoryFlag(bool b_history_flag);
 
 			void UpdateFSM(std::string NewFsmConfig);
-			std::shared_future<int> future;  // Make it static so it persists across function calls
-			bool isRunning = true;  // Flag to check if task is still running
+            void ExtractLogFile();
+            std::shared_future<int> future; // Make it static so it persists across function calls
+            bool isRunning = false;  // Flag to check if task is still running set to true to disable the updator
 			int NYF_old_neighbors_count ;
 			int NYF_reward;
             AutoMoDeController *GetInstance();

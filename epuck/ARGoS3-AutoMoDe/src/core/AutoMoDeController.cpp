@@ -11,6 +11,7 @@
 #include "AutoMoDeController.h"
 #include "../modules/AutoMoDeFsmUpdator.h"
 #include <future>
+#include <fstream>
 
 
 namespace argos {
@@ -168,7 +169,9 @@ namespace argos {
 
 		// if updater doesn't exist yet create it else pass 
 		AutoMoDeController* instance = GetInstance();
-		//updator.UpdateFsmLauncher(instance, m_unTimeStep, &m_strFsmConfiguration);
+		int timeStep = m_unTimeStep;
+		std::string fsmConfiguration = m_strFsmConfiguration;
+		//updator.UpdateFsmLauncher(instance, timeStep, &fsmConfiguration);
 
 		// ...
 
@@ -256,8 +259,31 @@ namespace argos {
 		AutoMoDeFiniteStateMachine* pcNewFiniteStateMachine = m_pcFsmBuilder->BuildFiniteStateMachine(NewFsmConfig);
 		// Replace the current FSM with the new one 
 		SetFiniteStateMachine(pcNewFiniteStateMachine);
-
+		
 	}
+
+	void AutoMoDeController::ExtractLogFile() {
+    // Extract the log file from the AutoMoDeFiniteStateMachine
+    std::string timestep = std::to_string(m_pcFiniteStateMachine->GetTimeStep());
+    printf("TimeStep: %s\n", timestep.c_str());
+
+	//AutoMoDeFsmHistory* histo = new AutoMoDeFsmHistory( m_pcFiniteStateMachine -> m_pcHistory);
+	m_pcFiniteStateMachine->MaintainHistory();
+
+
+    // Save history to a file
+    /* AutoMoDeFsmHistory* histo = new AutoMoDeFsmHistory( m_pcFiniteStateMachine -> GetHistory());
+	if (histo != nullptr) {
+		printf("path: %s\n", histo->m_strPath.c_str());
+		printf("path 2 : %s\n", histo->GetPath().c_str());
+        histo->CloseFile();  // CloseFile() should be called without the dereference operator
+    } else {
+        std::cerr << "Failed to retrieve FSM history\n";
+    }  */
+	
+   	
+}
+
 
 	AutoMoDeController* AutoMoDeController::GetInstance() {
 		// Return the instance of the controller

@@ -40,6 +40,7 @@
 
 namespace argos {
 	class AutoMoDeFiniteStateMachine {
+		friend class AutoMoDeController;
 
 		public:
 

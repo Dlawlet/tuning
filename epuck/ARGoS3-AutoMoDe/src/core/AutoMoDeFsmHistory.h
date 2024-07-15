@@ -28,6 +28,7 @@
 
 namespace argos {
 	class AutoMoDeFsmHistory {
+		friend class AutoMoDeController;
 		public:
 			/*
 			 * Class constructor. Takes the path to file where the history will be saved.
