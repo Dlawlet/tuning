@@ -12,6 +12,9 @@
 #include "../modules/AutoMoDeFsmUpdator.h"
 #include <future>
 #include <fstream>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/file.h>
 
 
 namespace argos {
@@ -23,7 +26,7 @@ namespace argos {
 		m_pcRobotState = new ReferenceModel1Dot2();
 		m_unTimeStep = 0;
 		m_strFsmConfiguration = "";
-		m_bMaintainHistory = false;
+		m_bMaintainHistory = true; // for testing purposes default is false
 		m_bPrintReadableFsm = false;
 		m_strHistoryFolder = "./";
 		m_bFiniteStateMachineGiven = false;
@@ -58,7 +61,9 @@ namespace argos {
 			THROW_ARGOSEXCEPTION_NESTED("Error parsing <params>", ex);
 		}
 
-		m_unRobotID = atoi(GetId().substr(5, 6).c_str());
+		//m_unRobotID = atoi(GetId().substr(5, 6).c_str()); 
+		// id always = 0 
+		m_unRobotID = rand() % 1000; 
 		m_pcRobotState->SetRobotIdentifier(m_unRobotID);
 
 		/*
@@ -261,27 +266,79 @@ namespace argos {
 		SetFiniteStateMachine(pcNewFiniteStateMachine);
 		
 	}
+	
 
-	void AutoMoDeController::ExtractLogFile() {
+bool isFileLocked(const std::string& filename) {
+    int fd = open(filename.c_str(), O_RDONLY);
+    if (fd == -1) {
+        return false; // File does not exist or cannot be opened
+    }
+
+    int lock_result = flock(fd, LOCK_EX | LOCK_NB);
+    if (lock_result == 0) {
+        flock(fd, LOCK_UN); // Unlock if we managed to lock it
+        close(fd);
+        return false; // File is not locked by another process
+    } else {
+        close(fd);
+        return true; // File is locked by another process
+    }
+}
+
+void AutoMoDeController::ExtractLogFile() {
     // Extract the log file from the AutoMoDeFiniteStateMachine
     std::string timestep = std::to_string(m_pcFiniteStateMachine->GetTimeStep());
     printf("TimeStep: %s\n", timestep.c_str());
 
-	//AutoMoDeFsmHistory* histo = new AutoMoDeFsmHistory( m_pcFiniteStateMachine -> m_pcHistory);
-	m_pcFiniteStateMachine->MaintainHistory();
+    // Ensure that the FSM is maintaining history
+    if (!m_pcFiniteStateMachine->GetMaintainHistoryFlag()) {
+        std::cerr << "FSM is not maintaining history.\n";
+        return;
+    }
 
-
-    // Save history to a file
-    /* AutoMoDeFsmHistory* histo = new AutoMoDeFsmHistory( m_pcFiniteStateMachine -> GetHistory());
-	if (histo != nullptr) {
-		printf("path: %s\n", histo->m_strPath.c_str());
-		printf("path 2 : %s\n", histo->GetPath().c_str());
-        histo->CloseFile();  // CloseFile() should be called without the dereference operator
-    } else {
+    // Retrieve the history
+    AutoMoDeFsmHistory* histo = m_pcFiniteStateMachine->GetHistory();
+    if (histo == nullptr) {
         std::cerr << "Failed to retrieve FSM history\n";
-    }  */
-	
-   	
+        return;
+    }
+
+    // Write the buffer to a new file
+    printf("Robot ID: %d\n", m_unRobotID);
+    std::string filename = "output_history_" + std::to_string(m_unRobotID) + ".txt";
+
+    if (isFileLocked(filename)) {
+        std::cerr << "File is currently locked by another process: " << filename << std::endl;
+        return;
+    }
+
+    int fd = open(filename.c_str(), O_WRONLY | O_CREAT, 0666);
+    if (fd == -1) {
+        std::cerr << "Failed to open the file: " << filename << std::endl;
+        return;
+    }
+
+    if (flock(fd, LOCK_EX) == -1) {
+        std::cerr << "Failed to lock the file: " << filename << std::endl;
+        close(fd);
+        return;
+    }
+
+    std::ofstream output_file(filename, std::ios::app);
+    if (!output_file.is_open()) {
+        std::cerr << "Failed to open the file: " << filename << std::endl;
+        flock(fd, LOCK_UN);
+        close(fd);
+        return;
+    }
+
+    for (const std::string& line : histo->GetBuffer()) { // Assuming GetBuffer() returns a vector<string>
+        output_file << line << std::endl;
+    }
+    output_file.close();
+    flock(fd, LOCK_UN);  // Unlock the file
+    close(fd);           // Close the file descriptor
+    printf("History successfully written to output_history_%d.txt\n", m_unRobotID);
 }
 
 

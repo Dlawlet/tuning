@@ -31,6 +31,10 @@ namespace argos {
 		friend class AutoMoDeController;
 		public:
 			/*
+			 * Returns the content of the buffer.
+			 */
+			const std::vector<std::string>& GetBuffer();
+			/*
 			 * Class constructor. Takes the path to file where the history will be saved.
 			 */
 			AutoMoDeFsmHistory(const std::string& str_path);

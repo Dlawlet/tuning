@@ -26,8 +26,10 @@ namespace argos {
 
 	AutoMoDeFsmHistory::AutoMoDeFsmHistory(AutoMoDeFsmHistory* pc_fsm_history) {
 		m_strPath = pc_fsm_history->GetPath();
+		m_buffer = pc_fsm_history->m_buffer;  // Copy the buffer content
 		OpenFile();
 	}
+
 
 	/****************************************/
 	/****************************************/
@@ -38,7 +40,12 @@ namespace argos {
 
 	/****************************************/
 	/****************************************/
-
+	const std::vector<std::string>& AutoMoDeFsmHistory::GetBuffer() {
+			return m_buffer;
+    }
+	
+	/****************************************/
+	/****************************************/
 	void AutoMoDeFsmHistory::OpenFile() {
 		m_ofHistoryFile.open(m_strPath.c_str(), std::ofstream::out | std::ofstream::trunc);
 		if(m_ofHistoryFile.fail()) {
@@ -54,7 +61,6 @@ namespace argos {
         	
 		for(std::vector<std::string>::iterator it = m_buffer.begin(); it != m_buffer.end(); ++it)
 		{
-			std::cout << *it << std::endl;
 			m_ofHistoryFile << *it << std::endl;
 		}
 //	     m_ofHistoryFile.close();

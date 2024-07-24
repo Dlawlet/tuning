@@ -18,7 +18,7 @@ namespace argos {
 	AutoMoDeFiniteStateMachine::AutoMoDeFiniteStateMachine() {
 		m_unCurrentBehaviourIndex = 0;
 		m_bEnteringNewState = true;
-		m_bMaintainHistory = false;
+		m_bMaintainHistory = true; // for testing purpose default value should be false 
 		m_unTimeStep = 0;
 	}
 
