@@ -34,7 +34,12 @@
 #include <argos3/plugins/robots/e-puck/control_interface/ci_epuck_ground_sensor.h>
 #include <argos3/plugins/robots/e-puck/control_interface/ci_epuck_omnidirectional_camera_sensor.h>
 
+#include <string>
+#include <argos3/core/control_interface/ci_controller.h>
+
+
 namespace argos{
+
 	class AutoMoDeController: public CCI_Controller {
 		public:
 			/*
@@ -76,12 +81,17 @@ namespace argos{
 
 			void UpdateFSM(std::string NewFsmConfig);
             void ExtractLogFile();
+			void linkSimulator(argos::CSimulator& cSimulator);
+
+       		//CoreLoopFunctions* m_pcLoopFunctions; 
+			CSimulator* cSimu;
             std::shared_future<int> future; // Make it static so it persists across function calls
-            bool isRunning = false;  // Flag to check if task is still running set to true to disable the updator
+            bool isRunning = true;  // Flag to check if task is still running set to true to disable the updator
 			int NYF_old_neighbors_count ;
 			int NYF_reward;
             AutoMoDeController *GetInstance();
 			AutoMoDeFsmUpdator updator;
+
 
         private:
 			/*
@@ -180,6 +190,12 @@ namespace argos{
 			CCI_EPuckOmnidirectionalCameraSensor* m_pcCameraSensor;
 
 			bool m_bFiniteStateMachineGiven;
+
+			/*
+			 * Pointer to the loop functions.
+			 */
+			//CoreLoopFunctions* m_pcLoopFunctions; // we use a pointer instead of a reference
+
 
 			
 

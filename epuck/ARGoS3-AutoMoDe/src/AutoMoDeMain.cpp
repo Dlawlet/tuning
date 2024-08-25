@@ -19,8 +19,6 @@
 #include "./core/AutoMoDeFsmBuilder.h"
 #include "./core/AutoMoDeController.h"
 
-#include <argos3/demiurge/loop-functions/CoreLoopFunctions.h>
-
 using namespace argos;
 
 const std::string ExplainParameters() {
@@ -121,14 +119,16 @@ int main(int n_argc, char** ppch_argv) {
 						AutoMoDeController& cController = dynamic_cast<AutoMoDeController&> (pcEntity->GetController());
 						cController.SetFiniteStateMachine(pcPersonalFsm);
 						cController.SetHistoryFlag(bHistory);
+						cController.linkSimulator(cSimulator); 
 					} catch (std::exception& ex) {
 						LOGERR << "Error while casting: " << ex.what() << std::endl;
 					}
 				}
 
-				cSimulator.Execute();
+				cSimulator.Execute(); 
 
 				// Retrieval of the score of the swarm driven by the Finite State Machine
+
 				CoreLoopFunctions& cLoopFunctions = dynamic_cast<CoreLoopFunctions&> (cSimulator.GetLoopFunctions());
 				Real fObjectiveFunction = cLoopFunctions.GetObjectiveFunction();
 				std::cout << "Score " << fObjectiveFunction << std::endl;

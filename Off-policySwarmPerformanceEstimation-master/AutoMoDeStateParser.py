@@ -72,7 +72,15 @@ class AutoMoDeFSMState:
 		self.counter += 1
 	
 	def increase_counter_transition(self, index):
-		self.transition_counters[index] += 1
+		try :
+			self.transition_counters[index] += 1
+			"""if index == 3 : 
+				raise IndexError"""
+		except IndexError:
+			print("transition counters is ")
+			print(self.transition_counters)
+			print("index is {0}".format(index))
+			#raise IndexError                #Definitely not Okay with this, the error should be handled
 	
 	# this methods returns a string representing the state 
 	# as a series of parameters for automode.

@@ -51,7 +51,7 @@ namespace argos {
 		if(m_ofHistoryFile.fail()) {
 			THROW_ARGOSEXCEPTION("Error opening file \"" << m_strPath);
 		}
-		printf("#################################################################################################################################################File opened\n");
+		//printf("#################################################################################################################################################File opened\n");
 	}
 
 	/****************************************/
@@ -72,7 +72,9 @@ namespace argos {
 		std::stringstream ssInput;
 		ssInput << "--t " << un_time_step << " "<< "--s" << pc_current_state->GetIndex() << " " << pc_current_state->GetIdentifier() << " ";
 		//ssInput << "--s" << pc_current_state->GetIndex() << " " << pc_current_state->GetIdentifier() << " ";
-               
+
+		//std::cout << "Adding time step " << un_time_step << " for state " << pc_current_state->GetIdentifier() << std::endl;
+		
 		std::map<AutoMoDeCondition*, bool>::iterator it;
                 bool first = true;
                 int t_active = 0;
@@ -88,12 +90,16 @@ namespace argos {
 		}
 		if(t_active > 0) {
                		ssInput << "--a " << t_active << " "; //printing number of active transitions
+					//std::cout << "Number of active transitions: " << t_active << std::endl;
 		}
                         ssInput << "--n " << pc_current_state->GetRobotDAO()->GetNumberNeighbors() << " "; //Printing number of neighbors
                         ssInput << "--f " << pc_current_state->GetRobotDAO()->GetGroundReading() << " "; //Printing ground floor reading
+						//std::cout << "Number of neighbors: " << pc_current_state->GetRobotDAO()->GetNumberNeighbors() << std::endl;
 		//m_ofHistoryFile << ssInput.str() << std::endl;
+		//std::cout <<"buffer size: " << m_buffer.size() << std::endl;
 		m_buffer.push_back(ssInput.str());
-	}
+		//std::cout << "Debug: " << ssInput.str() << std::endl;
+		}
 
 	/****************************************/
 	/****************************************/
@@ -102,8 +108,11 @@ namespace argos {
 		std::stringstream ssInput;
 		ssInput << "--t " << un_time_step << " ";
 		ssInput << "--s" << pc_current_state->GetIndex() << " " << pc_current_state->GetIdentifier() << " ";
+		
+		//std::cout << "debug: Time step " << un_time_step << " for state " << pc_current_state->GetIdentifier() << std::endl;
 		m_buffer.push_back(ssInput.str());
 		//m_ofHistoryFile << ssInput.str() << std::endl;
+		//std::cout << "Debug: " << ssInput.str() << std::endl;
 	}
 
 	/****************************************/

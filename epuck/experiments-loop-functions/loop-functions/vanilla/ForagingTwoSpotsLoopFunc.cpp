@@ -31,6 +31,10 @@ ForagingTwoSpotsLoopFunction::ForagingTwoSpotsLoopFunction(const ForagingTwoSpot
 
 void ForagingTwoSpotsLoopFunction::Init(TConfigurationNode& t_tree) {
     CoreLoopFunctions::Init(t_tree);
+    // clear the file objectiveval.txt
+    std::ofstream file;
+    file.open("objectiveval.txt", std::ofstream::out | std::ofstream::trunc);
+    file.close();
 }
 
 /****************************************/
@@ -121,6 +125,10 @@ void ForagingTwoSpotsLoopFunction::Reset() {
   std::ios::sync_with_stdio(false);
   m_mapFoodData.clear();
   m_fObjectiveFunction = 0;
+  // clear the file objectiveval.txt
+  std::ofstream file;
+  file.open("objectiveval.txt", std::ofstream::out | std::ofstream::trunc);
+  file.close();
 }
 
 /****************************************/
@@ -156,6 +164,25 @@ void ForagingTwoSpotsLoopFunction::PostStep() {
   if (score_temp != m_fObjectiveFunction) {
     LOGERR << "Obj " << m_fObjectiveFunction << std::endl;
   }
+  // for each timestep, write to file objectiveval.txt the time step and the objective function value
+  std::ofstream file;
+  file.open("objectiveval.txt", std::ios_base::app);
+  file << GetSpace().GetSimulationClock() << " " << m_fObjectiveFunction << std::endl;
+  file.close();
+
+  // if int timelapsed  = xxx, launch the output_join.py script to join the output files with args = 500
+  int timelapsed = 1795;
+  int val = GetSpace().GetSimulationClock() ;
+  if (val > 0 && val % timelapsed == 0) {
+    LOGERR << "Logfile creation" << std::endl;
+    // print out number of robots 
+    LOGERR << "Number of robots: " << tEpuckMap.size() << std::endl;
+    std::string command = "python3 output_join.py " + std::to_string((val-2)) + " " + std::to_string(tEpuckMap.size());
+    LOGERR << command << std::endl;
+    //system(command.c_str());
+    LOGERR <<"Logfile created" << std::endl;
+  }
+
 }
 
 /****************************************/

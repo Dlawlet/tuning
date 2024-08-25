@@ -1,0 +1,377 @@
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 5 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.454687 --n1x1 0 --c1x1 2 --p1x1 0.420119 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.0890435 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.274981 --n3x1 0 --c3x1 4 --p3x1 9 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.500827 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+11.618000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 52.544000
+OIS Expected average performance of the pruned FSM                   : 11.515000
+WIS Expected average performance with the proportional reward        : 53.014000
+OIS Expected average performance with the proportional reward        : 11.618000
+Obj 54
+Obj 48
+Obj 51
+Obj 44
+Obj 48
+Obj 46
+Obj 48
+Obj 43
+Obj 52
+Obj 50
+mean = 48.4
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 5 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.51877 --n1x1 0 --c1x1 2 --p1x1 0.604287 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.0845644 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.51282 --n3x1 0 --c3x1 4 --p3x1 6 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.54014 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+15153503404032.000000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.697000
+OIS Expected average performance of the pruned FSM                   : 15352864662934.681641
+WIS Expected average performance with the proportional reward        : 53.000000
+OIS Expected average performance with the proportional reward        : 15153503484951.757812
+Obj 47
+Obj 53
+Obj 41
+Obj 46
+Obj 52
+Obj 49
+Obj 54
+Obj 52
+Obj 47
+Obj 43
+mean= 48.4
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 4 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.486239 --n1x1 0 --c1x1 2 --p1x1 0.321859 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.10128 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.407411 --n3x1 0 --c3x1 4 --p3x1 9 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.2684 --n3x3 0 --c3x3 4 --p3x3 4 --w3x3 1.02
+0.062000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.674000
+OIS Expected average performance of the pruned FSM                   : 0.063000
+WIS Expected average performance with the proportional reward        : 53.001000
+OIS Expected average performance with the proportional reward        : 0.062000
+mean = 46.2
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.587525 --n1x1 0 --c1x1 2 --p1x1 0.619166 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.111905 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.543365 --n3x1 0 --c3x1 4 --p3x1 7 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.468136 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+158326637723648.000000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.697000
+OIS Expected average performance of the pruned FSM                   : 160409668097073.093750
+WIS Expected average performance with the proportional reward        : 53.000000
+OIS Expected average performance with the proportional reward        : 158326634620927.312500
+mean = 50.2
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 4 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.538032 --n1x1 0 --c1x1 2 --p1x1 0.450407 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.180062 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.558512 --n3x1 0 --c3x1 4 --p3x1 6 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.638001 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+856.291992
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.269000
+OIS Expected average performance of the pruned FSM                   : 860.453000
+WIS Expected average performance with the proportional reward        : 53.012000
+OIS Expected average performance with the proportional reward        : 856.292000
+Obj 46
+Obj 37
+Obj 47
+Obj 52
+Obj 42
+Obj 47
+Obj 41
+Obj 55
+Obj 49
+Obj 44
+mean = 46.0
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.444745 --n1x1 0 --c1x1 2 --p1x1 0.361395 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.0784788 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.451505 --n3x1 0 --c3x1 4 --p3x1 6 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.361288 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+0.238000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.448000
+OIS Expected average performance of the pruned FSM                   : 0.240000
+WIS Expected average performance with the proportional reward        : 53.004000
+OIS Expected average performance with the proportional reward        : 0.238000
+Obj 53
+Obj 40
+Obj 45
+Obj 56
+Obj 42
+Obj 54
+Obj 38
+Obj 46
+Obj 56
+Obj 49
+mean = 47.9
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 8 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.480037 --n1x1 0 --c1x1 2 --p1x1 0.562012 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.149869 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.521358 --n3x1 0 --c3x1 4 --p3x1 7 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.541778 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+23921078272.000000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.697000
+OIS Expected average performance of the pruned FSM                   : 24235661822.671001
+WIS Expected average performance with the proportional reward        : 53.000000
+OIS Expected average performance with the proportional reward        : 23921078801.792999
+Obj 55
+Obj 47
+Obj 49
+Obj 45
+Obj 49
+Obj 39
+Obj 43
+Obj 49
+Obj 48
+Obj 55
+mean = 47.9
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.405975 --n1x1 0 --c1x1 2 --p1x1 0.455154 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.132882 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.410153 --n3x1 0 --c3x1 4 --p3x1 7 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.35187 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+450.921997
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.044000
+OIS Expected average performance of the pruned FSM                   : 451.185000
+WIS Expected average performance with the proportional reward        : 53.013000
+OIS Expected average performance with the proportional reward        : 450.922000
+Obj 55
+Obj 59
+Obj 52
+Obj 47
+Obj 49
+Obj 44
+Obj 39
+Obj 50
+Obj 41
+Obj 53
+mean = 48.9
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 3 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.507432 --n1x1 0 --c1x1 2 --p1x1 0.497395 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.0219222 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.458253 --n3x1 0 --c3x1 4 --p3x1 7 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.348852 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+513053.593750
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.695000
+OIS Expected average performance of the pruned FSM                   : 519735.215000
+WIS Expected average performance with the proportional reward        : 53.004000
+OIS Expected average performance with the proportional reward        : 513053.590000
+Obj 49
+Obj 50
+Obj 53
+Obj 45
+Obj 46
+Obj 58
+Obj 50
+Obj 48
+Obj 67
+Obj 44
+mean = 51.0
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.444931 --n1x1 0 --c1x1 2 --p1x1 0.335099 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.0731213 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.25365 --n3x1 0 --c3x1 4 --p3x1 6 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.52047 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+0.068000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.640000
+OIS Expected average performance of the pruned FSM                   : 0.069000
+WIS Expected average performance with the proportional reward        : 53.001000
+OIS Expected average performance with the proportional reward        : 0.068000
+Obj 44
+Obj 53
+Obj 44
+Obj 43
+Obj 42
+Obj 50
+Obj 45
+Obj 50
+Obj 50
+Obj 47
+mean = 46.8
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 5 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.469179 --n1x1 0 --c1x1 2 --p1x1 0.358292 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.196008 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.431423 --n3x1 0 --c3x1 4 --p3x1 7 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.549715 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+0.249000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.233000
+OIS Expected average performance of the pruned FSM                   : 0.251000
+WIS Expected average performance with the proportional reward        : 53.004000
+OIS Expected average performance with the proportional reward        : 0.249000
+Obj 50
+Obj 52
+Obj 47
+Obj 47
+Obj 48
+Obj 41
+Obj 50
+Obj 45
+Obj 47
+Obj 49
+mean = 47.6
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.59379 --n1x1 0 --c1x1 2 --p1x1 0.628375 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.104866 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.62096 --n3x1 0 --c3x1 4 --p3x1 6 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.459708 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+607637544632320.000000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.697000
+OIS Expected average performance of the pruned FSM                   : 615632149487528.625000
+WIS Expected average performance with the proportional reward        : 53.000000
+OIS Expected average performance with the proportional reward        : 607637575747558.875000
+Obj 47
+Obj 50
+Obj 50
+Obj 55
+Obj 50
+Obj 49
+Obj 51
+Obj 48
+Obj 52
+Obj 42
+mean = 49.4 
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 4 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.560586 --n1x1 0 --c1x1 2 --p1x1 0.625359 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.0448707 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.453863 --n3x1 0 --c3x1 4 --p3x1 8 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.446118 --n3x3 0 --c3x3 4 --p3x3 4 --w3x3 1.02
+297659621441536.000000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.697000
+OIS Expected average performance of the pruned FSM                   : 301575857363559.937500
+WIS Expected average performance with the proportional reward        : 53.000000
+OIS Expected average performance with the proportional reward        : 297659626682483.562500
+Obj 45
+Obj 51
+Obj 43
+Obj 42
+Obj 47
+Obj 44
+Obj 50
+Obj 55
+Obj 56
+Obj 55
+mean = 48.8 
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.649562 --n1x1 0 --c1x1 2 --p1x1 0.319633 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.107468 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.405426 --n3x1 0 --c3x1 4 --p3x1 6 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.371249 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+0.132000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.685000
+OIS Expected average performance of the pruned FSM                   : 0.133000
+WIS Expected average performance with the proportional reward        : 53.000000
+OIS Expected average performance with the proportional reward        : 0.132000
+Obj 45
+Obj 50
+Obj 50
+Obj 45
+Obj 45
+Obj 49
+Obj 52
+Obj 51
+Obj 39
+Obj 50
+mean = 47.6
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.644313 --n1x1 0 --c1x1 2 --p1x1 0.38132 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.1745 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.414339 --n3x1 0 --c3x1 4 --p3x1 8 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.55826 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+2.002000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.072000
+OIS Expected average performance of the pruned FSM                   : 2.004000
+WIS Expected average performance with the proportional reward        : 53.006000
+OIS Expected average performance with the proportional reward        : 2.002000
+Obj 50
+Obj 48
+Obj 57
+Obj 47
+Obj 44
+Obj 49
+Obj 43
+Obj 49
+Obj 51
+Obj 42
+mean = 48.0
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 5 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.598755 --n1x1 0 --c1x1 2 --p1x1 0.448674 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.0939106 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.52343 --n3x1 0 --c3x1 4 --p3x1 9 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.65796 --n3x3 0 --c3x3 4 --p3x3 4 --w3x3 1.02
+849.161987
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.478000
+OIS Expected average performance of the pruned FSM                   : 856.616000
+WIS Expected average performance with the proportional reward        : 53.013000
+OIS Expected average performance with the proportional reward        : 849.162000
+Obj 53
+Obj 43
+Obj 55
+Obj 50
+Obj 48
+Obj 53
+Obj 52
+Obj 53
+Obj 42
+Obj 46
+mean = 49.5 
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.465386 --n1x1 0 --c1x1 2 --p1x1 0.570573 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.238542 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.512028 --n3x1 0 --c3x1 4 --p3x1 8 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.365048 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+53539151872.000000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.697000
+OIS Expected average performance of the pruned FSM                   : 54243206525.179001
+WIS Expected average performance with the proportional reward        : 53.000000
+OIS Expected average performance with the proportional reward        : 53539151691.014999
+Obj 40
+Obj 49
+Obj 43
+Obj 49
+Obj 46
+Obj 43
+Obj 43
+Obj 52
+Obj 57
+Obj 47
+mean = 46.9 
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 5 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.501913 --n1x1 0 --c1x1 2 --p1x1 0.633586 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.15261 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.404428 --n3x1 0 --c3x1 4 --p3x1 7 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.558557 --n3x3 0 --c3x3 4 --p3x3 4 --w3x3 1.02
+791181160087552.000000  
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.697000
+OIS Expected average performance of the pruned FSM                   : 801590892697947.750000
+WIS Expected average performance with the proportional reward        : 53.000000
+OIS Expected average performance with the proportional reward        : 791181192475140.125000
+Obj 51
+Obj 43
+Obj 48
+Obj 42
+Obj 46
+Obj 46
+Obj 50
+Obj 57
+Obj 53
+Obj 47
+mean = 48.3
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.465959 --n1x1 0 --c1x1 2 --p1x1 0.452965 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.0293376 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.414023 --n3x1 0 --c3x1 4 --p3x1 6 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.536133 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+503.902008
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.572000
+OIS Expected average performance of the pruned FSM                   : 509.209000
+WIS Expected average performance with the proportional reward        : 53.014000
+OIS Expected average performance with the proportional reward        : 503.902000
+Obj 48
+Obj 54
+Obj 56
+Obj 45
+Obj 52
+Obj 55
+Obj 58
+Obj 54
+Obj 54
+Obj 42
+mean = 51.8 
+
+
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 5 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.693843 --n1x1 0 --c1x1 2 --p1x1 0.320214 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.167393 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.453604 --n3x1 0 --c3x1 4 --p3x1 7 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.377726 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+0.171000
+Average performance of the original FSM                              : 53.0
+WIS Expected average performance of the pruned FSM                   : 53.681000
+OIS Expected average performance of the pruned FSM                   : 0.173000
+WIS Expected average performance with the proportional reward        : 53.000000
+OIS Expected average performance with the proportional reward        : 0.171000
+Obj 46
+Obj 52
+Obj 52
+Obj 47
+Obj 46
+Obj 47
+Obj 45
+Obj 49
+Obj 45
+Obj 51
+mean = 48.0 

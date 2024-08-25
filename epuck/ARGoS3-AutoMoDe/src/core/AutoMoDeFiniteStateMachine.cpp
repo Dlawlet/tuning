@@ -75,34 +75,49 @@ namespace argos {
 		/*
 		 * 1. Dealing with behaviours
 		 */
+		//print robot number 
+		//printf("in control step");
+		//printf("Robot number: %d\n", m_pcRobotDAO->GetRobotIdentifier());
 		if (m_bEnteringNewState) {
+			//printf("Entering new state\n");
 			m_pcCurrentBehaviour->Reset();
 		}
 
 		if (m_pcCurrentBehaviour->IsOperational()) {
+			//printf("Control step\n");
 			m_pcCurrentBehaviour->ControlStep();
 		} else {
+			//printf("Resume step\n");
 			m_pcCurrentBehaviour->ResumeStep();
 		}
 
 		/*
 		 * 2. Dealing with conditions
 		 */
-		m_mapConditionsChecked.clear();
+		m_mapConditionsChecked.clear(); // Clear the map of conditions checked to avoid any issue with the previous time step conditions
 		if (!m_pcCurrentBehaviour->IsLocked()) {
+			//printf("Not locked\n");
 			if (m_bEnteringNewState) {
+				//printf("Entering new state\n");
 				m_vecCurrentConditions = GetOutgoingConditions();
 				m_bEnteringNewState = false;
 			}
 			else {
+				//printf("Shuffling conditions\n");
+				//std::cout <<"m_vecCurrentConditions.size() = " << m_vecCurrentConditions.size() << std::endl;
+				for (std::vector<AutoMoDeCondition*>::iterator it = m_vecCurrentConditions.begin(); it != m_vecCurrentConditions.end(); it++) {
+					(*it)->Reset();
+				}
 				std::random_shuffle(m_vecCurrentConditions.begin(), m_vecCurrentConditions.end());
 				bool first = true;
 				for (std::vector<AutoMoDeCondition*>::iterator it = m_vecCurrentConditions.begin(); it != m_vecCurrentConditions.end(); it++) {
 					/*
 					 * 3. Update current behaviour
 					 */
+					//printf("Checking conditions\n");
 					bool is_verified = (*it)->Verify(); // To allow the recording of the full log all the transition will be saved in m_mapConditionsCheched
 					if (is_verified && first) {
+						//printf("Condition verified\n");
 						m_mapConditionsChecked.insert(std::pair<AutoMoDeCondition*, bool>((*it), true));
 						m_unCurrentBehaviourIndex = (*it)->GetExtremity();
 						m_pcCurrentBehaviour = m_vecBehaviours.at(m_unCurrentBehaviourIndex);
@@ -110,6 +125,7 @@ namespace argos {
 						//break;
 						first = false;
 					} else {
+						//printf("Condition not verified\n");
 						m_mapConditionsChecked.insert(std::pair<AutoMoDeCondition*, bool>((*it), is_verified));
 					}
 				}
@@ -119,9 +135,17 @@ namespace argos {
 		/*
 		 * 4. Dealing with history
 		 */
-		if (m_bMaintainHistory) {
+		/* if (m_bMaintainHistory) {
+			//printf("Maintaining history\n");
 			m_pcHistory->AddTimeStep(m_unTimeStep, m_pcCurrentBehaviour, m_mapConditionsChecked);
-		}
+		} */
+		if (m_bMaintainHistory) {
+    //printf("Maintaining zzzzzzzzze history\n");
+
+	//printf("no null pointer issue \n");
+    m_pcHistory->AddTimeStep(m_unTimeStep, m_pcCurrentBehaviour, m_mapConditionsChecked);
+	//printf("Time step added\n");
+}
 
 		/*
 		 * 5. Dealing with variables
@@ -336,7 +360,7 @@ namespace argos {
 	/****************************************/
 	/****************************************/
 
-	void AutoMoDeFiniteStateMachine::ShareRobotDAO() {
+	void AutoMoDeFiniteStateMachine::ShareRobotDAO() { // this function is used to share the robot DAO with the conditions and behaviours of the FSM, meaning that the robot DAO is shared with the conditions and behaviours of the FSM, itC and itB are iterators that are used to go through the conditions and behaviours of the FSM respectively.
 		std::vector<AutoMoDeCondition*>::iterator itC;
 		std::vector<AutoMoDeBehaviour*>::iterator itB;
 		for (itC = m_vecConditions.begin(); itC != m_vecConditions.end(); ++itC) {

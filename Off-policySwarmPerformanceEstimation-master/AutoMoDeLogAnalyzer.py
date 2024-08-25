@@ -322,6 +322,8 @@ def analyze_logfile(history_file, fsm_log_counter, experiments):
 							gsensor = t.getFloat()
 							
 						if(value == 1): #if the condition is true
+							#print("Condition {} of type {} has value {} belongs to state {}".format(condition,type,value,previous_state))
+							#print( fsm_log_counter[previous_state].transition_counters 		)
 							fsm_log_counter[previous_state].increase_counter_transition(condition)
 							exp_states.append(cstate) #update the states log
 							exp_transitions.append(condition) #update the transitions log

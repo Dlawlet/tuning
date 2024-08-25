@@ -38,6 +38,7 @@
 #include <ctime>
 #include <algorithm>
 
+
 namespace argos {
 	class AutoMoDeFiniteStateMachine {
 		friend class AutoMoDeController;
@@ -66,7 +67,7 @@ namespace argos {
 			void AddCondition(AutoMoDeCondition* pc_new_condition);
 
 			/*
-			 * Add a condition to the FSM.
+			 * Add a behaviour to the FSM.
 			 */
 			void AddBehaviour(AutoMoDeBehaviour* pc_new_behaviour);
 

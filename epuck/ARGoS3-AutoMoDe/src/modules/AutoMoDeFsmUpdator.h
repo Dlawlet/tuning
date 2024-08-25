@@ -30,6 +30,7 @@ class AutoMoDeFsmUpdator {
         std::string HeuristicOptimization(::argos::AutoMoDeController *instance, std::string *old_fsm);
         //std::vector<float> extractFsmParams(std::string *fsm);
         float Objective(std::vector<float> individual);
+        bool is_file_ready(const std::string& filename);
 
         std::vector<float> Genetic_Heuristic(const std::vector<float> &fsm_params);
 
@@ -45,9 +46,13 @@ class AutoMoDeFsmUpdator {
         float default_rate_reward = 0 ;
         // get bot number 
         int bot_number = rand()%1000;
-        std::string file_name =  "/home/ubuntu/daremo/tuning/Off-policySwarmPerformanceEstimation-master/iraceTools/fsm_logs/Estimated_fms" + std::to_string(bot_number) + ".txt";
+        std::string file_name =  "/home/ubuntu/daremo/tuning/coverage-auto/coverage-auto/mission-folder/estimated_fsms.txt";
         bool is_first = true;
         float best_old_fsm_value= 0;
+        bool hasExtracted = false;  // Flag to ensure function is called only once within the interval
+        bool hasEvaluated = false;  
+        bool hasUpdated = false;    
+
         std::vector<std::vector<float>> used_values = {};
 
         std::map<std::vector<float>, float> already_evaluated = {};
