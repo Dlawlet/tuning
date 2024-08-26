@@ -17,7 +17,7 @@
 # Path to the AutoMoDe software:
 # Note that this script is ran from the execution directory
 
-EXE=/home/ubuntu/daremo/tuning/epuck/ARGoS3-AutoMoDe/bin/automode_main
+EXE=/home/students/daremo/tuning/epuck/ARGoS3-AutoMoDe/bin/automode_main
 
 
 CONFIG_ID="$1"

@@ -1,0 +1,17 @@
+WITH Glogfile = pseudo reality with random seed number 1  (7676)
+
+1) after 10 runs/10, 
+New max objective: 4.08122e+31
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 5 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.642725 --n1x1 0 --c1x1 2 --p1x1 0.988131 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.105239 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.490603 --n3x1 0 --c3x1 4 --p3x1 9 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.335615 --n4x5 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+
+2) after 46 runs/50, 
+New max objective: 1.59514e+31
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 6 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.412619 --n1x1 0 --c1x1 2 --p1x1 0.803531 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.482677 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.648402 --n3x1 0 --c3x1 4 --p3x1 8 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.639963 --n4x3 0 --c3x3 6 --p3x3 3 --w3x3 1.02
+
+3)after 19 runs/50 (coredumped at 28) 
+New max objective: 1.84472e+32
+--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 7 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.712014 --n1x1 0 --c1x1 2 --p1x1 0.944586 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.120367 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.646602 --n3x1 0 --c3x1 4 --p3x1 6 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.140464 --n4x4 0 --c3x3 4 --p3x3 3 --w3x3 1.02
+
+4)after 10 runs/50 (coredumped plus false fsm degenerate)
+New max objective: 2.24625e+32
+--nstates 4 --s0 4 --n0 1 --n0x0 0 --c0x0 4 --p0x0 4 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.783594 --n1x1 0 --c1x1 2 --p1x1 0.944875 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.230742 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.261566 --n3x1 0 --c3x1 4 --p3x1 8 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.317356 --n4x4 0 --c4x3 4 --p3x3 3 --w3x3 1.02

@@ -11,7 +11,7 @@
   <!-- ****************** -->
   <!-- * Loop functions * -->
   <!-- ****************** -->
-  <loop_functions library="/home/ubuntu/daremo/tuning/epuck/experiments-loop-functions/build/loop-functions/vanilla/libforaging_loopfunc.so"
+  <loop_functions library="/home/students/daremo/tuning/epuck/experiments-loop-functions/build/loop-functions/vanilla/libforaging_loopfunc.so"
    label="foraging_loop_functions">
    <params dist_radius="1.2" number_robots="2"/>
   </loop_functions>
@@ -21,20 +21,20 @@
   <!-- *************** -->
   <controllers>
     <automode_controller id="automode"
-        library="/home/ubuntu/daremo/tuning/epuck/ARGoS3-AutoMoDe/build/src/libautomode.so">
+        library="/home/students/daremo/tuning/epuck/ARGoS3-AutoMoDe/build/src/libautomode.so">
         <actuators>
-          <epuck_wheels implementation="default" noise_std_dev="0.15"/>
+          <epuck_wheels implementation="default" noise_std_dev="0.05"/>
           <epuck_rgb_leds implementation="default" medium="leds"/>
           <epuck_range_and_bearing implementation="medium" medium="rab" data_size="4" range="0.6"/>
         </actuators>
         <sensors>
           <epuck_proximity implementation="default" show_rays="false" noise_level="0.05" calibrated="true"/>
-          <epuck_range_and_bearing implementation="medium" medium="rab" data_size="4" nois_std_deviation="1.5" loss_probability="0.90" calibrated="true"/>
-          <epuck_light implementation="default" show_rays="false" noise_level="0.90" calibrated="true"/>
+          <epuck_range_and_bearing implementation="medium" medium="rab" data_size="4" nois_std_deviation="1.5" loss_probability="0.85" calibrated="true"/>
+          <epuck_light implementation="default" show_rays="false" noise_level="0.05" calibrated="true"/>
           <epuck_ground implementation="rot_z_only" noise_level="0.05" calibrated="true"/>
           <epuck_omnidirectional_camera implementation="rot_z_only" medium="leds" show_rays="false"/>
         </sensors>
-        <params history="true" fsm-config="--nstates 4 --s0 4 --att0 2.27 --n0 3 --n0x0 0 --c0x0 5 --p0x0 0.724058 --n0x1 0 --c0x1 5 --p0x1 0.529004 --n0x2 1 --c0x2 0 --p0x2 0.332559 --s1 0 --rwm1 2 --n1 1 --n1x0 1 --c1x0 0 --p1x0 0.943735 --s2 2 --n2 3 --n2x0 1 --c2x0 2 --p2x0 0.996536 --n2x1 2 --c2x1 2 --p2x1 0.646196 --n2x2 2 --c2x2 2 --p2x2 0.853219 --s3 2 --n3 4 --n3x0 1 --c3x0 0 --p3x0 0.0513703 --n3x1 1 --c3x1 4 --p3x1 1 --w3x1 8.82 --n3x2 2 --c3x2 1 --p3x2 0.531911 --n3x3 0 --c3x3 1 --p3x3 0.508494" />
+        <params history="true" fsm-config="--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 5 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.55 --n1x1 0 --c1x1 2 --p1x1 0.43 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.09 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.43 --n3x1 0 --c3x1 4 --p3x1 7 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.48 --n3x3 0 --c3x3 4 --p3x3 2 --w3x3 1.02" />
     </automode_controller>
   </controllers>
 
@@ -124,7 +124,7 @@
   <!-- ***************** -->
   <!-- * Visualization * -->
   <!-- ***************** -->
-   <visualization>
+   <!--visualization>
 	 	 <qt-opengl autoplay="true" >
 
 	<camera>
@@ -134,6 +134,6 @@
                    lens_focal_length="45" />
         </camera>
 	</qt-opengl>  
-  </visualization>
+  </visualization-->
 
 </argos-configuration>
