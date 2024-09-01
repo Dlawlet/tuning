@@ -1,7 +1,7 @@
 #!/bin/bash
 #Daremo version
 # Path to the AutoMoDe software:
-EXE=/home/students/daremo/tuning/epuck/ARGoS3-AutoMoDe/bin/automode_main
+EXE=/home/ubuntu/daremo/tuning/epuck/ARGoS3-AutoMoDe/bin/automode_main
 
 IRACE_OUT="$1"
 MISSION="$2"

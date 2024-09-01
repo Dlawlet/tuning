@@ -11,7 +11,7 @@
   <!-- ****************** -->
   <!-- * Loop functions * -->
   <!-- ****************** -->
-  <loop_functions library="/home/students/daremo/tuning/epuck/experiments-loop-functions/build/loop-functions/vanilla/libforaging_loopfunc.so"
+  <loop_functions library="/home/ubuntu/daremo/tuning/epuck/experiments-loop-functions/build/loop-functions/vanilla/libforaging_loopfunc.so"
    label="foraging_loop_functions">
    <params dist_radius="1.2" number_robots="20"/>
   </loop_functions>
@@ -21,7 +21,7 @@
   <!-- *************** -->
   <controllers>
     <automode_controller id="automode"
-        library="/home/students/daremo/tuning/epuck/ARGoS3-AutoMoDe/build/src/libautomode.so">
+        library="/home/ubuntu/daremo/tuning/epuck/ARGoS3-AutoMoDe/build/src/libautomode.so">
         <actuators>
           <epuck_wheels implementation="default" noise_std_dev="0.15"/>
           <epuck_rgb_leds implementation="default" medium="leds"/>
@@ -34,7 +34,7 @@
           <epuck_ground implementation="rot_z_only" noise_level="0.05" calibrated="true"/>
           <epuck_omnidirectional_camera implementation="rot_z_only" medium="leds" show_rays="false"/>
         </sensors>
-        <params fsm-config="--nstates 4 --s0 3 --n0 1 --n0x0 0 --c0x0 4 --p0x0 5 --w0x0 3.5 --s1 0 --rwm1 1 --n1 2 --n1x0 1 --c1x0 0 --p1x0 0.693843 --n1x1 0 --c1x1 2 --p1x1 0.320214 --s2 2 --n2 2 --n2x0 0 --c2x0 2 --p2x0 0.167393 --n2x1 2 --c2x1 2 --p2x1 1 --s3 3 --n3 4 --n3x0 0 --c3x0 2 --p3x0 0.453604 --n3x1 0 --c3x1 4 --p3x1 7 --w3x1 11.23 --n3x2 1 --c3x2 5 --p3x2 0.377726 --n3x3 0 --c3x3 4 --p3x3 3 --w3x3 1.02"/>
+        <params fsm-config="PLACEHOLDER_FSM"/>
     </automode_controller>
   </controllers>
 

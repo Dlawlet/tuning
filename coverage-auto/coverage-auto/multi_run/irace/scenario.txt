@@ -1,0 +1,43 @@
+###################################################### -*- mode: r -*- #####
+## Scenario setup for Iterated Race (irace).
+############################################################################
+
+## To use the default value of a parameter of iRace, simply do not set
+## the parameter (comment it out in this file, and do not give any
+## value on the command line).
+
+## Command-line arguments provided to targetRunnerLauncher. The substrings
+## \{targetRunner\} and \{targetRunnerArgs\} will be replaced by the value of
+## the option targetRunner and by the arguments usually passed when calling
+## targetRunner, respectively. Example: "-m {targetRunner --args
+## {targetRunnerArgs}"}.
+# targetRunnerLauncherArgs = "{targetRunner} {targetRunnerArgs}"
+
+## File that contains the description of the parameters.
+#parameterFile = "../grammars/grammar-fsm.txt"
+parameterFile = "./params_fsmOrigin1_lite.txt"
+#parameterFile = "./params_fsmOrigin1.txt"
+
+## Number of calls to targetRunner to execute in parallel. Values 0 or 1 mean
+## no parallelization.
+parallel = 7
+
+#File that contains the options for parameter dependencies
+#dependencyFile = "../grammars/depend-config-fsm.txt"
+
+## Directory where the programs will be run.
+#execDir = "../results-folder"
+
+## Directory where tuning instances are located, either absolute path or
+## relative to current directory.
+trainInstancesDir = "./Instances"
+
+#The maximum total budget for the runs of targetRunner
+maxExperiments = 10000
+
+## Maximum number of iterations.
+nbIterations = 15
+
+## Indicates the number of decimal places to be considered for the
+## real parameters.
+digits = 3

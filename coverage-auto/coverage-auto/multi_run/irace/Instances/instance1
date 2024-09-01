@@ -1,0 +1,17 @@
+#!/bin/bash
+# instance launcher
+
+fsm_to_eval=$*
+
+# Capture the output of the instance command, redirecting stderr to /dev/null
+OUTPUT=$(./instance ${fsm_to_eval} 2>/dev/null)
+
+# Extract the last number from the entire output
+score=$(echo "$OUTPUT" | awk 'END{print $NF}')
+
+# Print the score
+#echo "scores"
+#echo "Scores __ $fsm_to_eval ____ $score"
+echo $score
+
+exit 0

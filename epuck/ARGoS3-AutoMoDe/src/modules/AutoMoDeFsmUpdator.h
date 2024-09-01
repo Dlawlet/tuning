@@ -46,7 +46,7 @@ class AutoMoDeFsmUpdator {
         float default_rate_reward = 0 ;
         // get bot number 
         int bot_number = rand()%1000;
-        std::string file_name =  "/home/students/daremo/tuning/coverage-auto/coverage-auto/mission-folder/estimated_fsms.txt";
+        std::string file_name =  "/home/ubuntu/daremo/tuning/coverage-auto/coverage-auto/mission-folder/estimated_fsms.txt";
         bool is_first = true;
         float best_old_fsm_value= 0;
         bool hasExtracted = false;  // Flag to ensure function is called only once within the interval

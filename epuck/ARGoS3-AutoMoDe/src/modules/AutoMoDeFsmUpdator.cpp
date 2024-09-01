@@ -340,9 +340,9 @@ float AutoMoDeFsmUpdator::Objective(std::vector<float> individual) {
     }
 
     std::string individual_fsm = Params_to_fsm(*best_old_fsm, individual);
-    //std::string command = "python3 /home/students/daremo/tuning/Off-policySwarmPerformanceEstimation-master/AutoMoDeLogAnalyzer.py /home/students/daremo/tuning/Off-policySwarmPerformanceEstimation-master/iraceTools/fsm_logs/6_fsm_log_no_comments.txt -pa --newfsm-config " + individual_fsm;
-    std::string log_file_path = "/home/students/daremo/tuning/coverage-auto/coverage-auto/mission-folder/Glogfile.txt";
-    std::string command = "python3 /home/students/daremo/tuning/Off-policySwarmPerformanceEstimation-master/AutoMoDeLogAnalyzer.py "+ log_file_path + " -pa --newfsm-config " + individual_fsm;
+    //std::string command = "python3 /home/ubuntu/daremo/tuning/Off-policySwarmPerformanceEstimation-master/AutoMoDeLogAnalyzer.py /home/ubuntu/daremo/tuning/Off-policySwarmPerformanceEstimation-master/iraceTools/fsm_logs/6_fsm_log_no_comments.txt -pa --newfsm-config " + individual_fsm;
+    std::string log_file_path = "/home/ubuntu/daremo/tuning/coverage-auto/coverage-auto/mission-folder/reflog/Glogfile.txt";
+    std::string command = "python3 /home/ubuntu/daremo/tuning/Off-policySwarmPerformanceEstimation-master/AutoMoDeLogAnalyzer.py "+ log_file_path + " -pa --newfsm-config " + individual_fsm;
 
     // Check if the glogfile exists and isn't locked by another process
     while (!is_file_ready(log_file_path)) {

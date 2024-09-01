@@ -1,0 +1,18 @@
+#!/bin/bash
+# target-runner
+
+CONFIG_ID="$1"
+INSTANCE_ID="$2"
+SEED="$3"
+INSTANCE="$4"
+
+# All other parameters are the candidate parameters to be passed to program
+shift 4 || error "Not enough parameters to $0"
+CONFIG_PARAMS=$*
+
+OUTPUT=$($INSTANCE ${CONFIG_PARAMS})
+
+echo "-$OUTPUT"
+
+exit 0
+

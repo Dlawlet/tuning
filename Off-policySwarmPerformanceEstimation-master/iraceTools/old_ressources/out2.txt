@@ -15,8 +15,8 @@
 * race: Racing methods for the selection of the best
 * Copyright (C) 2003 Mauro Birattari
 *******************************************************************************
-	installed at: /home/students/R/x86_64-pc-linux-gnu-library/3.6/irace
-# 16 expression(s) specifying dependent domains read from '/home/students/daremo/tuning/coverage-auto/coverage-auto/grammars/depend-config-fsm.txt'
+	installed at: /home/ubuntu/R/x86_64-pc-linux-gnu-library/3.6/irace
+# 16 expression(s) specifying dependent domains read from '/home/ubuntu/daremo/tuning/coverage-auto/coverage-auto/grammars/depend-config-fsm.txt'
 # 2024-03-25 04:51:12 PDT: Elitist race
 # Elitist new instances: 1
 # Elitist limit: 2

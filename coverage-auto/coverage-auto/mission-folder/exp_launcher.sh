@@ -34,6 +34,9 @@ for RANDOM_SEED in "${RANDOM_SEED_LIST[@]}"; do
 
     # Append the last "Obj" line to the output file
     echo "$last_obj_line" >> $OUTPUT_FILE
+
+    # rename the gloggile to include the random seed
+    #mv "Glogfile.txt" "Glog_$RANDOM_SEED.txt"
 done
 
 # Remove the temporary files
